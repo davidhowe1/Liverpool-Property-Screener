@@ -37,7 +37,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: #323232 solid 1px;
-    height: 6vh;
+    height: 3em;
     background-color: #1e1e1e;
 }
 
@@ -93,7 +93,6 @@ i.bi.bi-door-open-fill {
 }
 
 .search-bar input::placeholder {
-    font-weight: 100;
     font-size: 0.9rem;
 }
 
@@ -283,7 +282,7 @@ i.bi-suit-heart::before {
 }
 
 h2.price {
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1.4rem;
     display: flex;
     flex-direction: column;
@@ -293,7 +292,6 @@ h2.price {
 
 .house-details h3 {
     font-size: 1.1rem;
-    font-weight: 300;
     word-wrap: break-word;
 }
 
@@ -468,7 +466,7 @@ input#slider {
     opacity: 0;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     transition: 0.3s;
     z-index: -1;
 }
@@ -477,7 +475,7 @@ input#slider {
     opacity: 0.7;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: black;
     transition: 0.2s;
     z-index: 10;
@@ -490,7 +488,7 @@ input#slider {
     align-content: center;
     border-left: #323232 solid 1px;
     right: 0px;
-    height: 100%;
+    height: 100vh;
     background-color: #1a1a1a;
     width: 315px;
     z-index: 15;
@@ -609,7 +607,7 @@ input#slider {
 
 h3.address {
     font-size: 1rem;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .bookmark-card .details {
@@ -843,10 +841,18 @@ li.toggle-lighting-mode:hover {
     /* House Card Mobile */
 
     .house-card {
-        width: 95%;
-        margin: 20px;
+        width: 100%;
+        margin: 7px 7px 14px;
         height: 400px;
         box-sizing: border-box;
+    }
+
+    .house-card .text-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .house-card .icon-container p {
+        font-size: 0.8rem;
     }
 
     .house-card .image-container {
@@ -855,6 +861,10 @@ li.toggle-lighting-mode:hover {
 
     .house-card .image-container img {
         width: 100%;
+    }
+
+    .house-card .icon-container {
+        margin: 15px 20% 15px 0px;
     }
 
     /* House Card List Mobile */
@@ -898,7 +908,6 @@ li.toggle-lighting-mode:hover {
     .house-card.list .icon-container {
         margin: 10px 0px;
         width: 100%;
-        flex-wrap: wrap;
     }
 
     .house-card.list .text-container {
@@ -922,6 +931,10 @@ li.toggle-lighting-mode:hover {
     }
 
     /* Bookmarks */
+
+    .bookmarks-panel .panel-top {
+        padding: 5px;
+    }
 
     .image-container .bookmark-icon {
         opacity: 100%;

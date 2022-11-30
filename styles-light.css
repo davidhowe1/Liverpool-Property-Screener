@@ -30,7 +30,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: #e8e8e8 solid 1px;
-    height: 6vh;
+    height: 3em;
 }
 
 .logo {
@@ -84,7 +84,6 @@ i.bi.bi-door-open-fill {
 }
 
 .search-bar input::placeholder {
-    font-weight: 100;
     font-size: 0.9rem;
 }
 
@@ -101,6 +100,7 @@ i.bi.bi-door-open-fill {
     flex-direction: column;
     min-width: 250px;
     border-right: #e8e8e8 1px solid;
+    background-color: white;
 }
 
 .side-panel-top i {
@@ -119,6 +119,7 @@ i.bi.bi-door-open-fill {
     flex-wrap: wrap;
     padding: 20px;
     overflow-y: scroll;
+    background-color: #f9f9f9;
 }
 
 .toggle-view-items {
@@ -186,6 +187,7 @@ ul li:hover {
     margin: 20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
+    background-color: white;
 }
 
 .house-card.hidden {
@@ -271,7 +273,7 @@ i.bi-suit-heart::before {
 }
 
 h2.price {
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1.4rem;
     display: flex;
     flex-direction: column;
@@ -281,7 +283,6 @@ h2.price {
 
 .house-details h3 {
     font-size: 1.1rem;
-    font-weight: 300;
     word-wrap: break-word;
 }
 
@@ -450,7 +451,7 @@ input#slider {
     opacity: 0;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     transition: 0.3s;
     z-index: -1;
 }
@@ -459,7 +460,7 @@ input#slider {
     opacity: 0.7;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: black;
     transition: 0.2s;
     z-index: 10;
@@ -472,8 +473,8 @@ input#slider {
     align-content: center;
     border-left: #e8e8e8 solid 1px;
     right: 0px;
-    height: 100%;
-    background-color: white;
+    height: 100vh;
+    background-color: #f9f9f9;
     width: 315px;
     z-index: 15;
 }
@@ -485,7 +486,7 @@ input#slider {
     align-content: center;
     border-left: #e8e8e8 solid 1px;
     height: 100%;
-    background-color: white;
+    background-color: #f9f9f9;
     width: 350px;
     z-index: 15;
 }
@@ -545,6 +546,7 @@ input#slider {
     width: 270px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 0px 0px 10px 10px;
+    background-color: white;
 }
 
 .bookmark-card .image i.bi.bi-x {
@@ -589,7 +591,7 @@ input#slider {
 
 h3.address {
     font-size: 1rem;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 .bookmark-card .details {
@@ -828,8 +830,8 @@ li.toggle-lighting-mode:hover {
     /* House Card Mobile */
 
     .house-card {
-        width: 95%;
-        margin: 20px;
+        width: 100%;
+        margin: 7px 7px 14px;
         height: 400px;
         box-sizing: border-box;
     }
@@ -838,8 +840,20 @@ li.toggle-lighting-mode:hover {
         width: 100%;
     }
 
+    .house-card .text-container h3 {
+        font-size: 1.3rem;
+    }
+
     .house-card .image-container img {
         width: 100%;
+    }
+
+    .house-card .icon-container p {
+        font-size: 0.8rem;
+    }
+
+    .house-card .icon-container {
+        margin: 10px 20% 10px 0px;
     }
 
     /* House Card List Mobile */
@@ -907,6 +921,10 @@ li.toggle-lighting-mode:hover {
     }
 
     /* Bookmarks */
+
+    .bookmarks-panel .panel-top {
+        padding: 5px;
+    }
 
     .image-container .bookmark-icon {
         opacity: 100%;
