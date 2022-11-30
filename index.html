@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Screener</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-dark.css" id="theme-link">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
@@ -28,24 +28,28 @@
             </div>
         </div>
 
-    <header>
-        <div class="search-icon">
-            <i data-feather="search"></i>
+        <div class="search-bar">
+            <div class="search-icon">
+                <i data-feather="search"></i>
+            </div>
+    
+            <input type="text" placeholder="Search...">
         </div>
-
-        <input type="text" placeholder="Search...">
-    </header>
 
     <div class="app-container">
 
         <div class="side-panel">
-            <h3 class="title">Quick Searches</h3>
+            <div class="side-panel-top">
+                <h3 class="title">Quick Searches</h3>
+                <i class="bi bi-x-circle"></i>
+            </div>
+
             <ul class="toggle-searches">
-                <li><i class="bi bi-houses"></i>All Properties</li>
-                <li><i class="bi bi-clock"></i>Recently Added</li>
-                <li><i class="bi bi-stars"></i>New Homes</li>
-                <li><i class="bi bi-2-square"></i>2 Bed</li>
-                <li><i class="bi bi-3-square"></i>3 Bed</li>
+                <li class="toggle-search"><i class="bi bi-houses"></i>All Properties</li>
+                <li class="toggle-search"><i class="bi bi-clock"></i>Recently Added</li>
+                <li class="toggle-search"><i class="bi bi-stars"></i>New Homes</li>
+                <li class="toggle-search"><i class="bi bi-2-square"></i>2 Bed</li>
+                <li class="toggle-search"><i class="bi bi-3-square"></i>3 Bed</li>
             </ul>
 
             <h3 class="title">Price Range</h3>
@@ -60,23 +64,21 @@
 
             <div class="complex-search-criteria">
                 <ul class="complex-searches">
-                    <li class="below-market-value"><i class="bi bi-graph-down-arrow"></i>Below Market Average</li>
+                    <li class="below-market-value toggle-search"><i class="bi bi-graph-down-arrow"></i>Below Market Average</li>
                     <li class="show-bookmarks">
                         <div>
                             <i class="bi bi-suit-heart"></i>Saved Properties
                         </div>
                         <p id="bookmark-count">0</p>
                     </li>
+                    <li class="toggle-lighting-mode"><i class="bi bi-moon"></i><p>Toggle Light Mode</p></li>
                 </ul>
-            </div>
-
-            <div class="settings">
-                <i class="bi bi-gear"></i>
             </div>
         </div>
 
         <div class="toggle-view-items">
             <ul class="toggle-view">
+                <li class="toggle-menu"><i data-feather="menu"></i></li>
                 <li class="grid-view"><i class="bi bi-list-ul"></i><span>List View</span></li>
             </ul>
 

@@ -149,12 +149,10 @@ const propertyListings = [
 const contentContainer = document.querySelector(".content-container")
 
 function ready() {
-
     function renderProperties(property) {
         let html = ''
-        
-        property.forEach((house) => {
 
+        property.forEach((house) => {
         html = html + `
         <div class='house-card'>
 
@@ -254,7 +252,6 @@ belowMarketButton.addEventListener('click', function() {
         }
     }
 })
-
 }
 
 ready()
@@ -294,16 +291,14 @@ const bookmarkEmptyMessage = document.querySelector('.panel-top p');
 const bookmarkCount = document.getElementById('bookmark-count');
 
 function checkBookMarkIsEmpty() {
-    if (localStorage.getItem('saved-properties') !== '0') {
+    if ( localStorage.getItem('saved-properties') !== '0' && localStorage.getItem('saved-properties') !== null) {
         bookmarkCount.style.backgroundColor = '#f93c3c';
         bookmarkEmptyMessage.classList.add('hidden');
     } else {
-        bookmarkCount.style.backgroundColor = '#b3b3b3'
+        bookmarkCount.style.backgroundColor = '#969696'
         bookmarkEmptyMessage.classList.remove('hidden');
     }
 }
-
-checkBookMarkIsEmpty()
 
 function addBookMark() {
 
@@ -389,28 +384,33 @@ function removeBookmark() {
         checkBookMarkIsEmpty()
     }
 
-
 renderSavedProperties()
 addBookMark()
+
+// Bookmarks Panel Code
 
 const dimBackground = document.querySelector('.dim-background')
 const bookmarksPanel = document.querySelector('.bookmarks-panel');
 const showBookmarksPanelButton = document.querySelector('li.show-bookmarks');
 const hideBookmarksPanelButton = document.querySelector('i.bi.bi-x-circle')
 
-function ZIndex(value) {
-    dimBackground.style.setZIndex = value;
-}
-
 showBookmarksPanelButton.addEventListener('click', () => {
     bookmarksPanel.classList.add('visible');
     dimBackground.classList.add('visible');
 });
 
-hideBookmarksPanelButton.addEventListener('click', () => {
+function hideBookmarksPanel() {
     bookmarksPanel.classList.remove('visible');
     dimBackground.classList.remove('visible');
-});
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key == 'Escape') {
+        hideBookmarksPanel()
+    }
+})
+
+hideBookmarksPanelButton.addEventListener('click', hideBookmarksPanel);
 
 // Toggle View Code
 
@@ -439,3 +439,66 @@ function toggleCardView() {
 }
 
 toggleView.addEventListener('click', toggleCardView);
+
+// Dark Mode Script
+
+const darkModeToggle = document.querySelector('li.toggle-lighting-mode');
+const toggleThemeButtonIcon = darkModeToggle.firstElementChild;
+const toggleThemeButtonText = darkModeToggle.querySelector('p');
+let pageTheme = document.getElementById('theme-link')
+
+darkModeToggle.addEventListener('click', toggleTheme)
+
+function toggleTheme() {
+    if (pageTheme.getAttribute('href') == 'styles-light.css') {
+        setDarkTheme()
+    } else {
+        setLightTheme()
+    }
+}
+
+function setDarkTheme() {
+    pageTheme.href = 'styles-dark.css';
+    localStorage.setItem('theme', 'styles-dark.css')
+    toggleThemeButtonIcon.classList.remove('bi-moon')
+    toggleThemeButtonIcon.classList.add('bi-sun')
+    toggleThemeButtonText.innerText = 'Toggle Light Mode'
+}
+
+function setLightTheme() {
+    pageTheme.href = 'styles-light.css';
+    localStorage.setItem('theme', 'styles-light.css')
+    toggleThemeButtonIcon.classList.remove('bi-sun')
+    toggleThemeButtonIcon.classList.add('bi-moon')
+    toggleThemeButtonText.innerText = 'Toggle Dark Mode'
+}
+
+if (localStorage.getItem('theme') == 'styles-dark.css') {
+    setDarkTheme()
+} else {
+    setLightTheme()
+}
+
+// Mobile Side Panel
+
+const toggleSidePanelMobile = document.querySelector('.toggle-menu');
+const sidePanel = document.querySelector('.side-panel');
+const sidePanelCloseMobile = document.querySelector('.side-panel-top i');
+
+toggleSidePanelMobile.addEventListener('click', () => {
+    sidePanel.classList.toggle('active')
+})
+
+sidePanelCloseMobile.addEventListener('click', () => {
+    sidePanel.classList.remove('active')
+})
+
+const sidePanelActiveButtons = sidePanel.getElementsByTagName('li')
+
+for (let i = 0; i < sidePanelActiveButtons.length; i++) {
+    sidePanelActiveButtons[i].addEventListener('click', () => {
+        if (sidePanelActiveButtons[i].classList.contains('toggle-search')) {
+            sidePanel.classList.remove('active')
+        }
+    })
+}
