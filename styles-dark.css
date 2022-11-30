@@ -29,24 +29,57 @@ body {
     margin: 0px;
     padding: 0px;
     height: 100vh;
-    overflow-x: hidden;
-    background-color: #242424;
+    background-color: #1a1a1a;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #323232 solid 1px;
+    height: 6vh;
+    background-color: #1e1e1e;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    margin: 0px 15px;
+    width: fit-content;
+    color: #9b9b9b;
+}
+
+i.bi.bi-door-open-fill {
+    padding: 0px;
+    font-size: 1.5rem;
+    color: #6f6f6f;
 }
 
 .search-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
-    height: 8%;
+    width: 30%;
+    height: 2rem;
+    margin: 15px;
+    border-radius: 999px;
     background-color: #323232;
 }
 
 .search-icon {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
 }
 
 .search-icon svg {
+    height: 18px;
     color: #6f6f6f;
 }
 
@@ -56,18 +89,19 @@ body {
     background-color: transparent;
     padding: 0px;
     width: 100%;
-    font-size: 1.5rem;
-    color: #f1f1f1;
+    font-size: 0.9rem;
+    color: #9b9b9b;
 }
 
 .search-bar input::placeholder {
-    font-size: 1.5rem;
+    font-weight: 100;
+    font-size: 0.9rem;
 }
 
 .app-container {
     display: flex;
     flex-direction: row;
-    height: 92%;
+    height: 94vh;
     width: 100%;
 }
 
@@ -296,7 +330,7 @@ button.view-property {
     background-color: rgb(79, 79, 221);
     border: none;
     padding: 10px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 button.view-property p {
@@ -660,7 +694,8 @@ li.toggle-lighting-mode:hover {
     }
 
     .search-bar {
-        height: 6%;
+        width: 45%;
+        margin: 10px 15px;
     }
 
     li.grid-view span {
@@ -719,7 +754,6 @@ li.toggle-lighting-mode:hover {
         overflow-y: hidden;
         margin: 0px 15px;
         height: 100%;
-        border-top: #323232 solid 1px;
         -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     }
@@ -764,6 +798,15 @@ li.toggle-lighting-mode:hover {
 }
 
 @media screen and (max-width: 500px) {
+
+    .logo {
+        margin: 0px 5px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin: 10px 10px;
+    }
 
     .side-panel-top {
         display: flex;

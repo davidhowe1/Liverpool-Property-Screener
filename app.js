@@ -165,7 +165,7 @@ function ready() {
 
             <div class='text-container'>
                 <div class='house-details'>
-                    <h3>${house.address}</h3>
+                    <h3 class="address">${house.address}</h3>
     
                     <div class="icon-container">
                         <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${house.bedrooms}</p>
@@ -501,4 +501,22 @@ for (let i = 0; i < sidePanelActiveButtons.length; i++) {
             sidePanel.classList.remove('active')
         }
     })
+}
+
+// Search Bar Filter
+
+const searchBar = document.querySelector('.search-bar-input');
+
+searchBar.oninput = function() {
+    let filter = searchBar.value.toUpperCase();
+    let houses = document.querySelectorAll('.house-card');
+
+    for (let i = 0; i < houses.length; i++) {
+        if (houses[i].lastElementChild.firstElementChild.
+            querySelector('h3.address').innerText.toUpperCase().includes(filter)) {
+                houses[i].style.display = ''
+            } else {
+                houses[i].style.display = 'none'
+            }
+    }
 }
