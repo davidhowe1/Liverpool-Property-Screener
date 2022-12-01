@@ -91,7 +91,8 @@ i.bi.bi-door-open-fill {
     display: flex;
     flex-direction: row;
     height: 94vh;
-    width: 100%;
+    width: 100vw;
+    background-color: #f9f9f9;
 }
 
 .side-panel {
@@ -119,12 +120,12 @@ i.bi.bi-door-open-fill {
     flex-wrap: wrap;
     padding: 20px;
     overflow-y: scroll;
-    background-color: #f9f9f9;
 }
 
 .toggle-view-items {
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
 
 .toggle-searches {
@@ -138,6 +139,7 @@ ul.toggle-view {
     border-bottom: #e8e8e8 1px solid;
     margin: 0px;
     padding: 5px;
+    background-color: white;
 }
 
 ul.toggle-view li {
@@ -153,6 +155,15 @@ ul.toggle-view li i {
 
 ul.toggle-view li.toggle-menu {
     display: none;
+}
+
+li.sort-by-price :nth-child(2) {
+    padding: 0px 0px 0px 5px;
+}
+
+.sorting-options {
+    display: flex;
+    flex-direction: row;
 }
 
 ul {
@@ -187,7 +198,6 @@ ul li:hover {
     margin: 20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
-    background-color: white;
 }
 
 .house-card.hidden {
@@ -263,6 +273,8 @@ i.bi-suit-heart::before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .house-details {
@@ -354,6 +366,7 @@ button.view-property {
     width: 100%;
     height: 100%;
     justify-content: space-between;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .house-card.list .house-details h3 {
@@ -402,7 +415,7 @@ input#slider {
     margin: 20px 0px 0px;
     outline: none;
     cursor: pointer;
-    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #f1f1f1 50%, #f1f1f1 100%);
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #e8e8e8 50%, #e8e8e8 100%);
 }
 
 #slider::-webkit-slider-thumb {
@@ -538,15 +551,15 @@ input#slider {
     flex-direction: column-reverse;
     align-items: center;
     overflow-y: scroll;
+    padding-bottom: 20px;
 }
 
 .bookmark-card {
     position: relative;
-    margin: 20px;
+    margin: 20px 20px 5px;
     width: 270px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 0px 0px 10px 10px;
-    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+    border-radius: 8px;
 }
 
 .bookmark-card .image i.bi.bi-x {
@@ -581,7 +594,7 @@ input#slider {
     height: 200px;
     width: 270px;
     overflow: hidden;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
 }
 
 .bookmark-card .image img {
@@ -633,6 +646,96 @@ li.toggle-lighting-mode:hover {
     margin-right: 10px;
 }
 
+/* Skeleton Card */
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: #dddddd;
+    }
+    100% {
+      background-color: #c1c1c1;
+    }
+  }
+
+.skeleton-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #e8e8e8;
+    border: #dddddd solid 1px;
+}
+
+.skeleton-card-image {
+    display: flex;
+    position: relative;
+    height: 63%;
+    width: 300px;
+    border-radius: 10px 10px 0px 0px;
+    animation: skeleton-loading 0.8s linear infinite alternate;
+}
+
+.skeleton-card-bookmark {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 999px;
+    background-color: #9b9b9b;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.skeleton-card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 155px;
+    background-color: #f1f1f1;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.skeleton-card-text {
+    height: 15px;
+    box-sizing: border-box;
+    margin: 20px 20px 0px;
+    animation: skeleton-loading 0.8s linear infinite alternate;
+    border-radius: 999px;
+}
+
+.skeleton-card-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0px 10px 15px;
+    padding: 5px 0px 0px;
+    border-top: #e8e8e8 solid 1px;
+}
+
+.skeleton-card-price {
+    height: 25px;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 10px 20px 0px 10px;
+    animation: skeleton-loading 0.8s linear infinite alternate;
+    border-radius: 999px;
+}
+
+.skeleton-card-button {
+    height: 25px;
+    width: 40%;
+    box-sizing: border-box;
+    margin: 10px 10px 0px 20px;
+    animation: skeleton-loading 0.8s linear infinite alternate;
+    border-radius: 999px;
+}
+
+/* Skeleton Card */
+
 @media screen and (max-width: 1200px) {
 
     .house-card.list {
@@ -675,11 +778,12 @@ li.toggle-lighting-mode:hover {
         margin: 10px 15px;
     }
 
-    li.grid-view span {
+    li.grid-view span, li.sort-by-price span {
         font-size: 0.8rem;
     }
 
     .side-panel {
+        overflow-y: scroll;
         display: none;
         min-width: 220px;
     }
@@ -841,7 +945,7 @@ li.toggle-lighting-mode:hover {
     }
 
     .house-card .text-container h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .house-card .image-container img {
@@ -853,7 +957,7 @@ li.toggle-lighting-mode:hover {
     }
 
     .house-card .icon-container {
-        margin: 10px 20% 10px 0px;
+        margin: 10px 35% 10px 0px;
     }
 
     /* House Card List Mobile */

@@ -265,7 +265,7 @@ sliderValue.innerHTML = priceSlider.value;
 
 priceSlider.oninput = function() {
     let value = (this.value - this.min)/(this.max - this.min)*100;
-    priceSlider.style.background = 'linear-gradient(to right, #1a1a1a 0%' + value + '%, #1a1a1a' + value + '%, #f1f1f1 50%, #f1f1f1 100%)';
+    priceSlider.style.background = 'linear-gradient(to right, #1a1a1a 0%, #1a1a1a ' + value + '%, #f1f1f1 ' + value + '%, #f1f1f1 100%)';
 
     sliderValue.innerHTML = Math.round((this.value/1000))*1000;
     const sliderPrice = parseInt(sliderValue.innerHTML)
