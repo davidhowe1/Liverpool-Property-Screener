@@ -18,20 +18,78 @@
     background-clip: padding-box;
     border-radius: 999px;
     background-color: #6b6b6b;
-}  
+} 
+
+@keyframes loading {
+    25% {content: 'Loading Property Listings.'}
+    50% {content: 'Loading Property Listings..'}
+    75% {content: 'Loading Property Listings...'}
+    100% {content: 'Loading Property Listings'}
+}
+
+#splash-screen {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1a;
+    z-index: 100;
+    opacity: 100%;
+}
+
+#splash-screen.inactive {
+    opacity: 0%;
+    transition: 0.3s;
+}
+
+#splash-screen p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px;
+    font-size: large;
+}
+
+#splash-screen p::after {
+    content: 'Loading Property Listings';
+    animation: loading 3s infinite;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #e8e8e8;
+    border-radius: 999px;
+}
+
+.loader .icon-splash-screen {
+    filter: invert(15%);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    padding: 20px;
+}
 
 img.icon {
-    filter:invert(60%);
+    filter:invert(90%);
 }
 
 h2, p {
     margin: 0px 0px;
-    color: #9b9b9b;
+    color: #e8e8e8;
 }
 
 h3 {
     margin: 0px;
-    color: #9b9b9b;
+    color: #e8e8e8;
 }
 
 h3.title {
@@ -139,7 +197,46 @@ i.bi.bi-door-open-fill {
     margin: 0px 15px;
 }
 
+/* Content Container Code */
+
+#content-loader {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 85vw;
+    height: 95vh;
+    background-color: #1a1a1a;
+    z-index: 10;
+    opacity: 100%;
+}
+
+#content-loader.inactive {
+    opacity: 0%;
+    z-index: -10;
+    transition: 0.2s;
+}
+
+#content-loader p {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+}
+
+#content-loader p:after {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    content: 'Loading';
+    animation: loading 3s infinite;
+}
+
 .content-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -150,7 +247,6 @@ i.bi.bi-door-open-fill {
 .toggle-view-items {
     display: flex;
     flex-direction: column;
-    width: 100vw;
 }
 
 .toggle-searches {
@@ -225,6 +321,10 @@ li.sort-by-price :nth-child(2) {
     border-radius: 0px 4px 4px 0px;
 }
 
+.sort-by-bedrooms.ascending:hover span img.icon {
+    filter: invert(10%);
+}
+
 .sort-by-bedrooms.descending i {
     padding: 0px;
 }
@@ -243,7 +343,7 @@ ul li {
     align-items: center;
     padding: 15px 15px;
     list-style: none;
-    color: #9b9b9b;
+    color: #e8e8e8;
 }
 
 ul li:hover {
@@ -446,8 +546,8 @@ button.view-property p {
     height: 100%;
     max-width: 35em;
     overflow-y: scroll;
-    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
     background-color: #1a1a1a;
     padding: 10px;
     border-radius: 15px;
@@ -502,7 +602,7 @@ input#slider {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    color: #9b9b9b;
+    color: #e8e8e8;
 }
 
 #slider-value {
@@ -829,6 +929,10 @@ li.toggle-lighting-mode:hover {
 
 @media screen and (max-width: 1000px) {
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     .content-container {
         overflow-x: hidden;
         justify-content: space-evenly;
@@ -869,6 +973,7 @@ li.toggle-lighting-mode:hover {
 
     ul.toggle-view li.toggle-menu {
         display: flex;
+        color: #9b9b9b;
         background-color: transparent;
         border: none;
     }

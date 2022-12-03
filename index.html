@@ -5,12 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Screener</title>
+    <link rel="preload" href="styles-light.css" as="style">
     <link rel="stylesheet" href="styles-dark.css" id="theme-link">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 
 <body>
+
+    <div id="splash-screen">
+        <div class="loader">
+            <img class="icon-splash-screen" src="icons/door-open-fill.svg" alt="">
+        </div>
+        <p></p>
+    </div>
 
     <div class="dim-background"> </div>
 
@@ -29,7 +37,6 @@
         </div>
 
         <header>
-
             <div class="logo"><i class="bi bi-door-open-fill"></i></div>
 
             <div class="search-bar">
@@ -82,6 +89,11 @@
         </div>
 
         <div class="toggle-view-items">
+
+            <div id="content-loader inactive">
+                <P></P>
+            </div>
+            
             <ul class="toggle-view">
                 <div>
                     <li class="toggle-menu"><i data-feather="menu"></i></li>

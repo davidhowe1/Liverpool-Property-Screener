@@ -1,3 +1,15 @@
+const splashScreen = document.getElementById('splash-screen');
+
+window.onload = function() {
+    splashScreen.classList.add('inactive')
+
+    function removeLoadingScreen() {
+        splashScreen.remove()
+    }
+
+    setTimeout(removeLoadingScreen, 1500)
+}
+
 const propertyListings = [
 
     {
@@ -146,7 +158,8 @@ const propertyListings = [
     },
 ]
 
-const contentContainer = document.querySelector(".content-container")
+const contentContainer = document.querySelector(".content-container");
+const contentLoader = document.getElementById('content-loader');
 
 function ready() {
     
@@ -228,6 +241,7 @@ const toggleMenuSearchButtons = document.querySelectorAll('ul.toggle-searches li
 for (let i = 0; i < toggleMenuSearchButtons.length; i++) {
     toggleMenuSearchButtons[i].addEventListener('click', function() {
         toggleOptions(toggleLists[i]);
+        // Event to remove loading screen
     })
 }
 
@@ -258,12 +272,11 @@ belowMarketButton.addEventListener('click', function() {
 
 sortByBedrooms()
 sortByPrice()
-
 }
+
 ready()
 
 // sort price ascending and descending
-
 
 function sortByPrice() {
 
@@ -323,6 +336,7 @@ function sortByBedrooms() {
         });
     }
 }
+
 // Price slider code
 
 const priceSlider = document.getElementById('slider')
@@ -442,14 +456,15 @@ function removeBookmark() {
     const bookmarkedProperties = savedPropertiesContainer.children;
     for (let i = 0; i < bookmarkedProperties.length; i++ ) {
         bookmarkedProperties[i].querySelector('.remove-bookmark-button').addEventListener('click', deleteBookmark);
-    }}
-
-    function deleteBookmark(event) {
-        let buttonClicked = event.target;
-        buttonClicked.parentElement.parentElement.parentElement.remove()
-        savePropertyListings()
-        checkBookMarkIsEmpty()
     }
+}
+
+function deleteBookmark(event) {
+    let buttonClicked = event.target;
+    buttonClicked.parentElement.parentElement.parentElement.remove()
+    savePropertyListings()
+    checkBookMarkIsEmpty()
+}
 
 renderSavedProperties()
 addBookMark()
@@ -483,7 +498,7 @@ dimBackground.addEventListener('click', () => {
 
 hideBookmarksPanelButton.addEventListener('click', hideBookmarksPanel);
 
-// Toggle View Code
+// Toggle Card View Code
 
 const toggleView = document.querySelector('.grid-view')
 const text = toggleView.querySelector('span')
@@ -511,9 +526,7 @@ function toggleCardView() {
 
 toggleView.addEventListener('click', toggleCardView);
 
-// Sorting Code
-
-// Dark Mode Script
+// Dark Mode Code
 
 const darkModeToggle = document.querySelector('li.toggle-lighting-mode');
 const toggleThemeButtonIcon = darkModeToggle.firstElementChild;
