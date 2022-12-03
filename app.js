@@ -149,6 +149,7 @@ const propertyListings = [
 const contentContainer = document.querySelector(".content-container")
 
 function ready() {
+    
     function renderProperties(property) {
         let html = ''
 
@@ -168,9 +169,9 @@ function ready() {
                     <h3 class="address">${house.address}</h3>
     
                     <div class="icon-container">
+                        <p class="type"><i class="bi bi-house"></i>${house.type}</p>
                         <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${house.bedrooms}</p>
                         <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${house.bathrooms}</p>
-                        <p class="type"><i class="bi bi-house"></i>${house.type}</p>
                     </div>
                 </div>
 
@@ -217,6 +218,8 @@ function toggleOptions(list) {
     contentContainer.innerHTML = ''
     renderProperties(list)
     addBookMark()
+    sortByPrice()
+    sortByBedrooms()
 }
 
 const toggleLists = [propertyListings, newHomes, recentlyAdded, twoBedHouses, threeBedHouses]
@@ -224,7 +227,7 @@ const toggleMenuSearchButtons = document.querySelectorAll('ul.toggle-searches li
 
 for (let i = 0; i < toggleMenuSearchButtons.length; i++) {
     toggleMenuSearchButtons[i].addEventListener('click', function() {
-        toggleOptions(toggleLists[i])
+        toggleOptions(toggleLists[i]);
     })
 }
 
@@ -252,10 +255,74 @@ belowMarketButton.addEventListener('click', function() {
         }
     }
 })
-}
 
+sortByBedrooms()
+sortByPrice()
+
+}
 ready()
 
+// sort price ascending and descending
+
+
+function sortByPrice() {
+
+    let cards = document.querySelectorAll('.house-card');
+    const sortPriceAscending = document.querySelector('.sort-by-price.ascending');
+    const sortPriceDescending = document.querySelector('.sort-by-price.descending');
+
+    sortPriceAscending.addEventListener('click', sortByAscending)
+    sortPriceDescending.addEventListener('click', sortByDescending)
+
+    function sortByAscending() {
+        Array.from(cards).sort(function(a, b) {
+            a = parseInt(a.querySelector('.price').innerText.replace(/£/g, ''));
+            b = parseInt(b.querySelector('.price').innerText.replace(/£/g, ''));
+            return (a > b) - (a < b)
+        }).forEach(function(n, i) {
+            n.style.order = i;
+        });
+    }
+
+    function sortByDescending() {
+        Array.from(cards).sort(function(a, b) {
+            a = parseInt(a.querySelector('.price').innerText.replace(/£/g, ''));
+            b = parseInt(b.querySelector('.price').innerText.replace(/£/g, ''));
+            return (a < b) - (a > b)
+        }).forEach(function(n, i) {
+            n.style.order = i;
+        });
+    }
+}
+
+function sortByBedrooms() {
+    let cards = document.querySelectorAll('.house-card');
+    const sortBedroomsAscending = document.querySelector('.sort-by-bedrooms.ascending');
+    const sortBedroomsDescending = document.querySelector('.sort-by-bedrooms.descending');
+
+    sortBedroomsAscending.addEventListener('click', sortByAscending)
+    sortBedroomsDescending.addEventListener('click', sortByDescending)
+
+    function sortByAscending() {
+        Array.from(cards).sort(function(a, b) {
+            a = parseInt(a.querySelector('.bedrooms').innerText.replace(/£/g, ''));
+            b = parseInt(b.querySelector('.bedrooms').innerText.replace(/£/g, ''));
+            return (a > b) - (a < b)
+        }).forEach(function(n, i) {
+            n.style.order = i;
+        });
+    }
+
+    function sortByDescending() {
+        Array.from(cards).sort(function(a, b) {
+            a = parseInt(a.querySelector('.bedrooms').innerText.replace(/£/g, ''));
+            b = parseInt(b.querySelector('.bedrooms').innerText.replace(/£/g, ''));
+            return (a < b) - (a > b)
+        }).forEach(function(n, i) {
+            n.style.order = i;
+        });
+    }
+}
 // Price slider code
 
 const priceSlider = document.getElementById('slider')
@@ -317,7 +384,7 @@ for (let i = 0; i < bookmark.length; i++ ) {
             <div class="bookmark-card">
                 <div class="image">
                     <div class="remove-bookmark-button">
-                        <i class="bi bi-x bookmark"></i>
+                        <i class="bi bi-trash bookmark"></i>
                     </div>
                     <img src="${image}" alt="">
                 </div>
@@ -325,9 +392,9 @@ for (let i = 0; i < bookmark.length; i++ ) {
                 <div class="details">
                     <h3 class="address">${address}</h3>
                     <div class="icon-container">
+                        <p class="type"><i class="bi bi-house"></i>${houseType}</p>
                         <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${bedrooms}</p>
                         <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${bathrooms}</p>
-                        <p class="type"><i class="bi bi-house"></i>${houseType}</p>
                     </div>
 
                     <div class="button-container">
@@ -410,6 +477,10 @@ document.addEventListener('keydown', function(event) {
     }
 })
 
+dimBackground.addEventListener('click', () => {
+    hideBookmarksPanel()
+})
+
 hideBookmarksPanelButton.addEventListener('click', hideBookmarksPanel);
 
 // Toggle View Code
@@ -439,6 +510,8 @@ function toggleCardView() {
 }
 
 toggleView.addEventListener('click', toggleCardView);
+
+// Sorting Code
 
 // Dark Mode Script
 
