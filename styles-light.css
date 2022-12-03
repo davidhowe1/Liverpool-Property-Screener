@@ -138,6 +138,11 @@ i.bi.bi-door-open-fill {
     background-color: #e8e8e8;
 }
 
+.search-bar:focus-within {
+    outline: solid 1px #9b9b9b;
+    transition: 0.1s;
+}
+
 .search-icon {
     display: flex;
     flex-direction: column;
@@ -212,18 +217,18 @@ i.bi.bi-door-open-fill {
 }
 
 ul.toggle-view {
-    display: flex;
     font-size: 0.8rem;
     flex-direction: row;
     margin: 0px;
+    height: fit-content;
     padding: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 ul.toggle-view li {
     cursor: pointer;
-    padding: 8px;
     margin: 6px;
+    padding: 8px;
     background-color: #dddddd;
     border-radius: 4px;
 }
@@ -384,7 +389,6 @@ i.bi-suit-heart::before {
 
 .text-container {
     height: fit-content;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
@@ -490,16 +494,18 @@ button.view-property {
     display: flex;
     flex-direction: column;
     margin: 0px 40px;
-    height: 100%;
+    height: 50%;
     max-width: 35em;
     overflow-y: hidden;
     -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    border-top: #e8e8e8 solid 1px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 .house-card.list .description h2 {
-    margin: 20px 0px;
+    margin: 0px 0px 10px; 
 }
 
 .house-card.list .house-details {
@@ -916,7 +922,7 @@ li.toggle-lighting-mode:hover {
         justify-content: space-between;
     }
 
-    ul.toggle-view li.toggle-menu {
+    ul.li.toggle-menu {
         display: flex;
         background-color: transparent;
     }
@@ -949,7 +955,7 @@ li.toggle-lighting-mode:hover {
         flex-direction: column;
         overflow-y: hidden;
         margin: 0px 15px;
-        height: 100%;
+        height: 50%;
         border-top: #f1f1f1 solid 1px;
         -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
@@ -957,7 +963,7 @@ li.toggle-lighting-mode:hover {
     
     .house-card.list .description h2 {
         font-size: 1rem;
-        margin: 10px 0px;
+        margin: 0px 0px 10px;
     }
     
     .house-card.list .house-details {
