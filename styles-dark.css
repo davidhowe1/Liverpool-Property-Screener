@@ -4,7 +4,7 @@
 
 ::-webkit-scrollbar {
     width: 13px;
-  }
+}
   
 ::-webkit-scrollbar-thumb {
     border: 4px solid rgba(0, 0, 0, 0);
@@ -113,7 +113,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 4em;
-    background-color: #1e1e1e;
+    background-color: #222222;
 }
 
 .logo {
@@ -130,7 +130,7 @@ header {
 i.bi.bi-door-open-fill {
     padding: 0px;
     font-size: 1.5rem;
-    color: #6f6f6f;
+    color: #f1f1f1;
 }
 
 .search-bar {
@@ -141,7 +141,7 @@ i.bi.bi-door-open-fill {
     width: 30%;
     margin: 10px;
     border-radius: 999px;
-    background-color: #323232;
+    background-color: #404040;
     transition: 0.1s;
 }
 
@@ -160,7 +160,7 @@ i.bi.bi-door-open-fill {
 
 .search-icon svg {
     height: 18px;
-    color: #6f6f6f;
+    color: #9b9b9b;
 }
 
 .search-bar input {
@@ -174,6 +174,7 @@ i.bi.bi-door-open-fill {
 }
 
 .search-bar input::placeholder {
+    color: #9b9b9b;
     font-size: 0.9rem;
 }
 
@@ -274,7 +275,7 @@ ul.toggle-view li {
     padding: 8px;
     margin: 6px;
     background-color: #222222;
-    border: #323232 solid 0.5px;
+    border: #404040 solid 0.5px;
     border-radius: 4px;
 }
 
@@ -559,6 +560,7 @@ button.view-property p {
 }
 
 .house-card.list .description h2 {
+    font-weight: 300;
     margin: 0px 0px 20px;
 }
 
@@ -571,7 +573,7 @@ button.view-property p {
 }
 
 .house-card.list .button-container {
-    margin: 0px 40px 0px 40px;
+    margin: 10px 20px 10px 40px;
 }
 
 /* Slider Styles */
@@ -589,7 +591,7 @@ input#slider {
     outline: none;
     cursor: pointer;
     filter: invert(85%);
-    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #e8e8e8 50%, #e8e8e8 100%);
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #c1c1c1 50%, #c1c1c1 100%);
 }
 
 #slider::-webkit-slider-thumb {
@@ -975,7 +977,6 @@ li.toggle-lighting-mode:hover {
         justify-content: space-between;
     }
     
-
     ul.toggle-view li.toggle-menu {
         display: flex;
         color: #9b9b9b;
@@ -1093,6 +1094,17 @@ li.toggle-lighting-mode:hover {
         min-width: 100vw;
         box-sizing: border-box;
         padding: 10px;
+    }
+
+
+    .search-icon {
+        margin: 10px;
+    }
+
+    .search-bar input::placeholder {
+        font-size: 0.8rem;
+        justify-self: center;
+        align-self: center;
     }
 
     ul.toggle-view li {

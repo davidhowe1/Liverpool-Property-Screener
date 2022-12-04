@@ -106,7 +106,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 4em;
-    background-color: #f9f9f9;
+    background-color: #34323b;
     z-index: 10;
 }
 
@@ -124,7 +124,7 @@ header {
 i.bi.bi-door-open-fill {
     padding: 0px;
     font-size: 1.5rem;
-    color: #222222;
+    color: #f1f1f1;
 }
 
 .search-bar {
@@ -135,7 +135,7 @@ i.bi.bi-door-open-fill {
     height: 2.8rem;
     margin: 10px;
     border-radius: 999px;
-    background-color: #e8e8e8;
+    background-color: #dddddd;
 }
 
 .search-bar:focus-within {
@@ -167,6 +167,7 @@ i.bi.bi-door-open-fill {
 
 .search-bar input::placeholder {
     font-size: 0.9rem;
+    color: #6f6f6f;
 }
 
 .app-container {
@@ -182,8 +183,7 @@ i.bi.bi-door-open-fill {
     padding: 20px 10px 10px;
     flex-direction: column;
     min-width: 250px;
-    background-color: #f9f9f9;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #d4d4de;
 }
 
 .side-panel-top i {
@@ -222,15 +222,17 @@ ul.toggle-view {
     margin: 0px;
     height: fit-content;
     padding: 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #f9f9f9;
+    border-bottom: #e8e8e8 solid 1px;
 }
 
 ul.toggle-view li {
     cursor: pointer;
     margin: 6px;
     padding: 8px;
-    background-color: #dddddd;
+    background-color: #e8e8e8;
     border-radius: 4px;
+    border: #c1c1c1 solid 0.5px;
 }
 
 ul.toggle-view li:hover {
@@ -302,7 +304,7 @@ ul li {
 }
 
 ul li:hover {
-    background-color: #dddddd;
+    background-color: #e8e8e8;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -457,7 +459,7 @@ button.view-property {
     display: flex;
     flex-direction: row;
     width: fit-content;
-    height: 500px;
+    height: 450px;
 }
 
 .house-card.list.hidden {
@@ -466,7 +468,7 @@ button.view-property {
 
 .house-card.list .image-container {
     display: flex;
-    min-width: 500px;
+    min-width: 450px;
     overflow: hidden;
     border-radius: 10px 0px 0px 10px;
 }
@@ -505,7 +507,8 @@ button.view-property {
 }
 
 .house-card.list .description h2 {
-    margin: 0px 0px 10px; 
+    font-weight: 300;
+    margin: 0px 0px 20px; 
 }
 
 .house-card.list .house-details {
@@ -517,7 +520,7 @@ button.view-property {
 }
 
 .house-card.list .button-container {
-    margin: 0px 40px 0px 40px;
+    margin: 10px 20px 10px 40px;
 }
 
 /* Slider Styles */
@@ -534,7 +537,7 @@ input#slider {
     margin: 20px 0px 0px;
     outline: none;
     cursor: pointer;
-    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #e8e8e8 50%, #e8e8e8 100%);
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #9b9b9b 50%, #9b9b9b 100%);
 }
 
 #slider::-webkit-slider-thumb {
@@ -884,6 +887,10 @@ li.toggle-lighting-mode:hover {
 
 @media screen and (max-width: 1000px) {
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     .content-container {
         overflow-x: hidden;
         justify-content: space-evenly;
@@ -919,7 +926,15 @@ li.toggle-lighting-mode:hover {
     }
 
     ul.toggle-view {
+        display: flex;
         justify-content: space-between;
+    }
+
+    ul.toggle-view li.toggle-menu {
+        display: flex;
+        color: #222222;
+        background-color: transparent;
+        border: none;
     }
 
     ul.li.toggle-menu {
@@ -1044,7 +1059,7 @@ li.toggle-lighting-mode:hover {
     }
 
     .search-bar input::placeholder {
-        font-size: 1rem;
+        font-size: 0.8rem;
         justify-self: center;
         align-self: center;
     }
