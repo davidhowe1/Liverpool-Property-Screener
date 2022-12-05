@@ -24,7 +24,6 @@
     25% {content: 'Loading Property Listings.'}
     50% {content: 'Loading Property Listings..'}
     75% {content: 'Loading Property Listings...'}
-    100% {content: 'Loading Property Listings'}
 }
 
 #splash-screen {
@@ -97,7 +96,8 @@ h3.title {
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body {
@@ -145,11 +145,6 @@ i.bi.bi-door-open-fill {
     transition: 0.1s;
 }
 
-.search-bar:focus-within {
-    outline: solid 1px #6b6b6b;
-    transition: 0.1s;
-}
-
 .search-icon {
     display: flex;
     flex-direction: column;
@@ -169,6 +164,7 @@ i.bi.bi-door-open-fill {
     background-color: transparent;
     padding: 0px;
     width: 100%;
+    height: 100%;
     font-size: 0.9rem;
     color: #9b9b9b;
 }
@@ -314,7 +310,7 @@ li.sort-by-price :nth-child(2) {
 }
 
 .sort-by-price.descending i {
-    padding: 0px;
+    padding: 0px 5px;
 }
 
 .sort-by-bedrooms.ascending {
@@ -333,7 +329,7 @@ li.sort-by-price :nth-child(2) {
 }
 
 .sort-by-bedrooms.descending i {
-    padding: 0px;
+    padding: 0px 5px;
 }
 
 ul {
@@ -552,9 +548,7 @@ button.view-property p {
     height: 50%;
     max-width: 35em;
     overflow-y: scroll;
-    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
-    background-color: #1a1a1a;
+    background-color: #323232;
     padding: 10px;
     border-radius: 15px;
 }
@@ -829,86 +823,6 @@ li.toggle-lighting-mode:hover {
     color: #1a1a1a;
 }
 
-/* Skeleton Card */
-
-.skeleton-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 400px;
-    width: 300px;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: #1e1e1e;
-    border: #6f6f6f solid 1px;
-}
-
-.skeleton-card-image {
-    display: flex;
-    position: relative;
-    height: 63%;
-    width: 300px;
-    background-color: #6f6f6f;
-    border-radius: 9px 9px 0px 0px;
-}
-
-.skeleton-card-bookmark {
-    display: flex;
-    height: 40px;
-    width: 40px;
-    border-radius: 999px;
-    background-color: #9b9b9b;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-}
-
-.skeleton-card-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 155px;
-    background-color: #323232;
-    border-radius: 0px 0px 10px 10px;
-}
-
-.skeleton-card-text {
-    height: 15px;
-    box-sizing: border-box;
-    margin: 20px 20px 0px;
-    background-color: #404040;
-    border-radius: 999px;
-}
-
-.skeleton-card-button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 0px 10px 15px;
-    padding: 5px 0px 0px;
-}
-
-.skeleton-card-price {
-    height: 25px;
-    width: 50%;
-    box-sizing: border-box;
-    margin: 10px 20px 0px 10px;
-    background-color: #404040;
-    border-radius: 999px;
-}
-
-.skeleton-card-button {
-    height: 25px;
-    width: 40%;
-    box-sizing: border-box;
-    margin: 10px 10px 0px 20px;
-    background-color: #404040;
-    border-radius: 999px;
-}
-
-/* Skeleton Card */
-
 @media screen and (max-width: 1200px) {
 
     .house-card.list {
@@ -935,6 +849,11 @@ li.toggle-lighting-mode:hover {
 }
 
 @media screen and (max-width: 1000px) {
+
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 
     ::-webkit-scrollbar {
         display: none;

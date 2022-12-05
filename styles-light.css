@@ -24,7 +24,6 @@
     25% {content: 'Loading Property Listings.'}
     50% {content: 'Loading Property Listings..'}
     75% {content: 'Loading Property Listings...'}
-    100% {content: 'Loading Property Listings'}
 }
 
 #splash-screen {
@@ -54,7 +53,7 @@
 }
 
 #splash-screen p::after {
-    content: 'Loading';
+    content: 'Loading Property Listings';
     animation: loading 3s infinite;
 }
 
@@ -91,7 +90,8 @@ h3.title {
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body {
@@ -138,11 +138,6 @@ i.bi.bi-door-open-fill {
     background-color: #dddddd;
 }
 
-.search-bar:focus-within {
-    outline: solid 1px #9b9b9b;
-    transition: 0.1s;
-}
-
 .search-icon {
     display: flex;
     flex-direction: column;
@@ -161,6 +156,7 @@ i.bi.bi-door-open-fill {
     outline: none;
     background-color: transparent;
     padding: 0px;
+    height: 100%;
     width: 100%;
     font-size: 0.9rem;
 }
@@ -183,7 +179,7 @@ i.bi.bi-door-open-fill {
     padding: 20px 10px 10px;
     flex-direction: column;
     min-width: 250px;
-    background-color: #d4d4de;
+    background-color: #ebebf1;
 }
 
 .side-panel-top i {
@@ -269,7 +265,7 @@ li.sort-by-price :nth-child(2) {
 }
 
 .sort-by-price.descending i {
-    padding: 0px;
+    padding: 0px 5px;
 }
 
 .sort-by-bedrooms.ascending {
@@ -284,7 +280,7 @@ li.sort-by-price :nth-child(2) {
 }
 
 .sort-by-bedrooms.descending i {
-    padding: 0px;
+    padding: 0px 5px;
 }
 
 ul {
@@ -304,7 +300,7 @@ ul li {
 }
 
 ul li:hover {
-    background-color: #e8e8e8;
+    background-color: #d3d3d3;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -499,8 +495,6 @@ button.view-property {
     height: 50%;
     max-width: 35em;
     overflow-y: hidden;
-    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     background-color: #f1f1f1;
     padding: 10px;
     border-radius: 15px;
@@ -663,7 +657,7 @@ input#slider {
 }
 
 .panel-title-and-close i:hover {
-    background-color: #f1f1f1;
+    background-color: #d3d3d3;
 }
 
 .saved-property-list {
@@ -770,96 +764,6 @@ li.toggle-lighting-mode:hover {
     margin-right: 10px;
 }
 
-/* Skeleton Card */
-  
-  @keyframes skeleton-loading {
-    0% {
-      background-color: #dddddd;
-    }
-    100% {
-      background-color: #c1c1c1;
-    }
-  }
-
-.skeleton-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 400px;
-    width: 300px;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: #e8e8e8;
-    border: #dddddd solid 1px;
-}
-
-.skeleton-card-image {
-    display: flex;
-    position: relative;
-    height: 63%;
-    width: 300px;
-    border-radius: 10px 10px 0px 0px;
-    animation: skeleton-loading 0.8s linear infinite alternate;
-}
-
-.skeleton-card-bookmark {
-    display: flex;
-    height: 40px;
-    width: 40px;
-    border-radius: 999px;
-    background-color: #9b9b9b;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-}
-
-.skeleton-card-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 155px;
-    background-color: #f1f1f1;
-    border-radius: 0px 0px 10px 10px;
-}
-
-.skeleton-card-text {
-    height: 15px;
-    box-sizing: border-box;
-    margin: 20px 20px 0px;
-    animation: skeleton-loading 0.8s linear infinite alternate;
-    border-radius: 999px;
-}
-
-.skeleton-card-button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 0px 10px 15px;
-    padding: 5px 0px 0px;
-    border-top: #e8e8e8 solid 1px;
-}
-
-.skeleton-card-price {
-    height: 25px;
-    width: 50%;
-    box-sizing: border-box;
-    margin: 10px 20px 0px 10px;
-    animation: skeleton-loading 0.8s linear infinite alternate;
-    border-radius: 999px;
-}
-
-.skeleton-card-button {
-    height: 25px;
-    width: 40%;
-    box-sizing: border-box;
-    margin: 10px 10px 0px 20px;
-    animation: skeleton-loading 0.8s linear infinite alternate;
-    border-radius: 999px;
-}
-
-/* Skeleton Card */
-
 @media screen and (max-width: 1200px) {
 
     .house-card.list {
@@ -886,6 +790,11 @@ li.toggle-lighting-mode:hover {
 }
 
 @media screen and (max-width: 1000px) {
+
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 
     ::-webkit-scrollbar {
         display: none;

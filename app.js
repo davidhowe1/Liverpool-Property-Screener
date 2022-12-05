@@ -162,12 +162,12 @@ const contentContainer = document.querySelector(".content-container");
 const contentLoader = document.getElementById('content-loader');
 
 function ready() {
-    
     function renderProperties(property) {
         let html = ''
 
         property.forEach((house) => {
         html = html + `
+
         <div class='house-card'>
 
             <div class='image-container'>
@@ -202,9 +202,10 @@ function ready() {
             </div>
         </div>
         `
-        })
 
-        contentContainer.insertAdjacentHTML('beforeend', html)
+        })
+    contentContainer.insertAdjacentHTML('beforeend', html)
+
     }
 
 renderProperties(propertyListings)
@@ -268,7 +269,7 @@ belowMarketButton.addEventListener('click', function() {
             houseCards[i].classList.add('hidden')
         }
     }
-})
+});
 
 sortByBedrooms()
 sortByPrice()
