@@ -881,7 +881,7 @@ li.toggle-lighting-mode:hover {
         padding: 8px;
         font-size: 1rem;
         border-radius: 999px;
-        background-color: white;
+        background-color: transparent;
         transition: 0.15s;
     }
     
