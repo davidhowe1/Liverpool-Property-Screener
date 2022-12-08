@@ -298,6 +298,12 @@ li.sort-by-price :nth-child(2) {
     flex-direction: row;
 }
 
+.sorting-options-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .sort-by-price.ascending {
     margin-right: 0px;
     border-radius: 4px 0px 0px 4px;
@@ -889,7 +895,7 @@ li.toggle-lighting-mode:hover {
     }
 
     .toggle-view-items {
-        overflow-x: scroll;
+        overflow-x: hidden;
     }
 
     ul.toggle-view {
@@ -909,6 +915,43 @@ li.toggle-lighting-mode:hover {
 
     .toggle-menu:hover {
         border-radius: 999px;
+    }
+
+    .sorting-options-toggle i {
+        display: flex;
+        color: #c1c1c1;
+        padding: 8px;
+        font-size: 1rem;
+        border-radius: 999px;
+        background-color: #1a1a1a;
+        transition: 0.15s;
+    }
+    
+    .sorting-options-toggle i.active {
+        display: flex;
+        padding: 8px;
+        font-size: 1rem;
+        color: #222222;
+        border-radius: 999px;
+        background-color: #f1f1f1;
+        transition: 0.15s;
+    }
+    
+    .sorting-options {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        transition: 0.3s all ease-in-out;
+        overflow: scroll;
+    }
+
+    .sorting-options.hidden {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        transform: translateX(100vw);
+        transition: 0.3s all ease-in-out;
+        overflow: scroll;
     }
 
     /* House Card List Tablet */

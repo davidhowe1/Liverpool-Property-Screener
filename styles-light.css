@@ -248,9 +248,25 @@ li.sort-by-price :nth-child(2) {
     padding: 0px 0px 0px 5px;
 }
 
-.sorting-options {
+.sorting-options-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.sorting-options-toggle i.active {
+    display: none;
+}
+
+.sorting-options-toggle i {
+    display: none;
+}
+
+.sorting-options {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    transition: 0.4s all ease-in-out;
 }
 
 .sort-by-price.ascending {
@@ -831,7 +847,7 @@ li.toggle-lighting-mode:hover {
     }
 
     .toggle-view-items {
-        overflow-x: scroll;
+        overflow-x: hidden;
     }
 
     ul.toggle-view {
@@ -857,6 +873,43 @@ li.toggle-lighting-mode:hover {
 
     .toggle-menu:hover {
         border-radius: 999px;
+    }
+
+    .sorting-options-toggle i {
+        display: flex;
+        color: #222222;
+        padding: 8px;
+        font-size: 1rem;
+        border-radius: 999px;
+        background-color: white;
+        transition: 0.15s;
+    }
+    
+    .sorting-options-toggle i.active {
+        display: flex;
+        padding: 8px;
+        font-size: 1rem;
+        color: #222222;
+        border-radius: 999px;
+        background-color: #c1c1c1;
+        transition: 0.15s;
+    }
+    
+    .sorting-options {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        transition: 0.3s all ease-in-out;
+        overflow: scroll;
+    }
+
+    .sorting-options.hidden {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        transform: translateX(100vw);
+        transition: 0.3s all ease-in-out;
+        overflow: scroll;
     }
 
     /* House Card List Tablet */

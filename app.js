@@ -279,6 +279,15 @@ ready()
 
 // sort price ascending and descending
 
+const sortingOptionsToggleDisplay = document.querySelector('.sorting-options-toggle');
+const sortingOpttionsContainer = document.querySelector('.sorting-options');
+const sortingOptionsToggleIcon = document.querySelector('.sorting-options-toggle i');
+
+sortingOptionsToggleDisplay.addEventListener('click', ()=> {
+    sortingOpttionsContainer.classList.toggle('hidden');
+    sortingOptionsToggleIcon.classList.toggle('active')
+})
+
 function sortByPrice() {
 
     let cards = document.querySelectorAll('.house-card');
@@ -517,11 +526,11 @@ function toggleCardView() {
     if (toggleIcon.classList.contains('bi-grid')) {
         toggleIcon.classList.remove('bi-grid')
         toggleIcon.classList.add('bi-list-ul')
-        text.innerText = 'List View'
+        text.innerText = 'List'
     } else {
         toggleIcon.classList.remove('bi-list-ul')
         toggleIcon.classList.add('bi-grid')
-        text.innerText = 'Grid View'
+        text.innerText = 'Grid'
     }
 }
 
