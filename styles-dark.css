@@ -304,6 +304,10 @@ li.sort-by-price :nth-child(2) {
     align-items: center;
 }
 
+.sorting-options-toggle i {
+    display: none;
+}
+
 .sort-by-price.ascending {
     margin-right: 0px;
     border-radius: 4px 0px 0px 4px;
@@ -502,6 +506,7 @@ button.view-property {
     border: none;
     padding: 10px 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 button.view-property p {
@@ -801,6 +806,10 @@ h3.address {
     text-align: center;
 }
 
+.bookmark-card .description {
+    display: none;
+}
+
 .bookmark-card .button-container {
     margin: 0px;
     padding: 10px 0px 0px;
@@ -828,6 +837,211 @@ li.toggle-lighting-mode:hover {
 .toggle-lighting-mode:hover p {
     color: #1a1a1a;
 }
+
+.detailed-view-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.detailed-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: fit-content;
+    width: 75vw;
+    background-color: #222222;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgba(0, 0, 0, 0.3) 0px 2px 6px 2px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.first-content-wrapper {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+}
+
+.detailed-image-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 35px 35px 35px 35px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.detailed-image-container img {
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.first-content-wrapper .text-content {
+    color: #e8e8e8;
+    margin: 20px 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-content .close-detailed-view {
+    color: #d85d5d;
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px #d85d5d solid;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.text-content .close-detailed-view:hover {
+    color: white;
+    background-color: #d85d5d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px #d85d5d solid;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+button.save-property {
+    display: flex;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 999px;
+    border: none;
+    padding: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 6px;
+    transition: 0.1s;
+}
+
+button.save-property:hover {
+    color: white;
+    background-color: #f93c3c;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+button.save-property i {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+
+h1.price {
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin: 0px 10px 0px 0px;
+}
+
+.text-content .house-details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px;
+}
+
+.home-status {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 15px;
+}
+
+.new-home {
+    border: #84e8b1 solid 1px;
+    color: #84e8b1;
+    width: fit-content;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 999px;
+    margin: 0px 2px;
+}
+
+.recently-added {
+    border: #d3d3d3 solid 1px;
+    color: #d3d3d3;
+    width: fit-content;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin: 0px 2px;
+}
+
+div:empty {
+    display: none;
+}
+
+.text-content .description {
+    border-radius: 10px;
+    background-color: #323232;
+    padding: 20px;
+}
+
+.text-content .description h2 {
+    margin: 0px 0px 10px;
+}
+
+.text-content .icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.text-content .icon-container p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+.close-window i {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 999px;
+}
+
+.close-window i:hover {
+    padding: 8px;
+    background-color: #404040;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.detailed-view-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 20px 0px;
+}
+
+.detailed-view-button button {
+    color: #e8e8e8;
+}
+
+/* Responsive Styles */
 
 @media screen and (max-width: 1200px) {
 
@@ -954,6 +1168,67 @@ li.toggle-lighting-mode:hover {
         overflow: scroll;
     }
 
+    /* Detailed Card styles */
+
+    .detailed-view {
+        height: fit-content;
+        width: 85vw;
+    }
+
+    .first-content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detailed-image-container {
+        height: 400px;
+        min-height: 300px;
+        padding: 15px;
+    }
+
+    .first-content-wrapper .text-content {
+        padding: 0px 15px;
+        margin: 0px;
+    }
+
+    .text-content .close-detailed-view {
+        margin: 0px;
+    }
+
+    .detailed-view-button {
+        justify-content: space-between;
+    }
+
+    .text-content h1.address {
+        font-size: 1.3rem;
+    }
+
+    .text-content .house-details h1.price {
+        font-size: 1.5rem;
+    }
+
+    .new-home, .recently-added {
+        font-size: 0.7rem;
+        padding: 4px 9px;
+    }
+
+    .text-content .icon-container {
+        margin: 10px 0px;
+    }
+
+    .text-content .description {
+        padding: 15px;
+        overflow-y: scroll;
+    }
+
+    .text-content .description h2 {
+        font-size: 1.2rem;
+    }
+
+    .text-content .description p {
+        font-size: 0.9rem;
+    }
+
     /* House Card List Tablet */
 
     .house-card.list {
@@ -1058,7 +1333,6 @@ li.toggle-lighting-mode:hover {
         padding: 10px;
     }
 
-
     .search-icon {
         margin: 10px;
     }
@@ -1071,6 +1345,30 @@ li.toggle-lighting-mode:hover {
 
     ul.toggle-view li {
         padding: 5px;
+    }
+
+    /* Detailed Card styles */
+
+    .detailed-view {
+        height: fit-content;
+        width: 90vw;
+    }
+
+    .first-content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detailed-image-container {
+        max-height: 30vh;
+        height: fit-content;
+        min-height: 150px;
+        padding: 15px;
+    }
+
+    .first-content-wrapper .text-content {
+        padding: 0px 15px;
+        margin: 0px;
     }
 
     /* House Card Mobile */

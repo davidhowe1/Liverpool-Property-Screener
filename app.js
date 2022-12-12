@@ -20,8 +20,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Semi-Detached',
-        newHome: true,
-        recentlyAdded: false,
+        newHome: 'New Home',
+        recentlyAdded: '',
     },
 
     {   
@@ -32,8 +32,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Semi-Detached',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 
     {
@@ -44,8 +44,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Terraced',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 
     {
@@ -56,8 +56,8 @@ const propertyListings = [
         bedrooms: 2,
         bathrooms: 1,
         type: 'Terraced',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 
     {
@@ -68,8 +68,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Semi-Detached',
-        newHome: true,
-        recentlyAdded: false,
+        newHome: 'New Home',
+        recentlyAdded: '',
     },
 
     {   
@@ -80,8 +80,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Semi-Detached',
-        newHome: true,
-        recentlyAdded: true,
+        newHome: 'New Home',
+        recentlyAdded: 'Recently Added',
 
     },
 
@@ -93,8 +93,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Terraced',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 
     {
@@ -105,8 +105,8 @@ const propertyListings = [
         bedrooms: 2,
         bathrooms: 1,
         type: 'Terraced',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 
     {
@@ -117,8 +117,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Semi-Detached',
-        newHome: true,
-        recentlyAdded: false,
+        newHome: 'New Home',
+        recentlyAdded: '',
     },
 
     {   
@@ -129,8 +129,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Semi-Detached',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 
     {
@@ -141,8 +141,8 @@ const propertyListings = [
         bedrooms: 3,
         bathrooms: 1,
         type: 'Terraced',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 
     {
@@ -153,8 +153,8 @@ const propertyListings = [
         bedrooms: 2,
         bathrooms: 1,
         type: 'Terraced',
-        newHome: false,
-        recentlyAdded: true,
+        newHome: '',
+        recentlyAdded: 'Recently Added',
     },
 ]
 
@@ -169,7 +169,6 @@ function ready() {
         html = html + `
 
         <div class='house-card'>
-
             <div class='image-container'>
                 <div class="bookmark-icon">
                     <i class="bi-suit-heart-fill bookmark"></i>
@@ -186,6 +185,11 @@ function ready() {
                         <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${house.bedrooms}</p>
                         <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${house.bathrooms}</p>
                     </div>
+                </div>
+
+                <div class="home-status">
+                    <div class="new-home">${house.newHome}</div>
+                    <div class="recently-added">${house.recentlyAdded}</div>
                 </div>
 
                 <div class="description">
@@ -213,11 +217,11 @@ renderProperties(propertyListings)
 // Filter Lists for Quick Searches
 
 const newHomes = propertyListings.filter((item) => {
-    return item.newHome === false;
+    return item.newHome === 'New Home';
 })
 
 const recentlyAdded = propertyListings.filter((item) => {
-    return item.recentlyAdded === true;
+    return item.recentlyAdded === 'Recently Added';
 })
 
 const twoBedHouses = propertyListings.filter((item) => {
@@ -234,6 +238,7 @@ function toggleOptions(list) {
     addBookMark()
     sortByPrice()
     sortByBedrooms()
+    renderDetailedView()
 }
 
 const toggleLists = [propertyListings, newHomes, recentlyAdded, twoBedHouses, threeBedHouses]
@@ -402,6 +407,7 @@ for (let i = 0; i < bookmark.length; i++ ) {
         const bedrooms = houseCards[i].querySelector('p.bedrooms').innerText;
         const bathrooms = houseCards[i].querySelector('p.bathrooms').innerText;
         const houseType = houseCards[i].querySelector('p.type').innerText;
+        const description = houseCards[i].querySelector('.description').querySelector('p').innerText;
 
         savedPropertiesContainer.innerHTML += `
 
@@ -421,6 +427,8 @@ for (let i = 0; i < bookmark.length; i++ ) {
                         <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${bathrooms}</p>
                     </div>
 
+                    <div class="description">${description}</div>
+
                     <div class="button-container">
                         <h2 class="price">£${price}</h2>                    
                         <button class="view-property">
@@ -433,6 +441,7 @@ for (let i = 0; i < bookmark.length; i++ ) {
 
         checkBookMarkIsEmpty()
         savePropertyListings()
+        renderDetailedViewFromBookmarks()
     });
 }}
 
@@ -478,6 +487,7 @@ function deleteBookmark(event) {
 
 renderSavedProperties()
 addBookMark()
+renderDetailedViewFromBookmarks()
 
 // Bookmarks Panel Code
 
@@ -616,3 +626,174 @@ searchBar.oninput = function() {
             }
     }
 }
+
+// Open more detailed view of cards
+
+function renderDetailedView() {
+
+    for (let i = 0; i < houseCards.length; i++) {
+    const viewPropertyButtons = houseCards[i].lastElementChild.lastElementChild.querySelector('.view-property')
+    
+    viewPropertyButtons.addEventListener('click', ()=> {
+        
+        const image = houseCards[i].firstElementChild.querySelector('img').src;
+        const address = houseCards[i].querySelector('h3').innerText;
+        const price = parseInt(houseCards[i].querySelector('h2.price').innerText.replace(/£/g, ''));
+        const bedrooms = houseCards[i].querySelector('p.bedrooms').innerText;
+        const bathrooms = houseCards[i].querySelector('p.bathrooms').innerText;
+        const houseType = houseCards[i].querySelector('p.type').innerText;
+        const description = houseCards[i].querySelector('.description').querySelector('p').innerText;
+        const newHome = houseCards[i].querySelector('.new-home').innerText;
+        const recentlyAdded = houseCards[i].querySelector('.recently-added').innerText;
+
+        let detailedView = ''
+        detailedView = detailedView + `
+
+            <div class="detailed-view">
+                <div class="first-content-wrapper">
+                    <div class="detailed-image-container">
+                        <img src="${image}" alt="">
+                    </div>
+
+                    <div class="text-content">
+                        <div>
+                        
+                            <h1 class="address">${address}</h1>
+
+                            <div class="house-details">
+                                <h1 class="price">£${price}</h1>
+                                <div class="new-home">${newHome}</div>
+                                <div class="recently-added">${recentlyAdded}</div>
+                            </div>
+
+                            <div class="icon-container">
+                                <p class="type"><i class="bi bi-house"></i>${houseType}</p>
+                                <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${bedrooms}</p>
+                                <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${bathrooms}</p>
+                            </div>
+
+                            <div class="description">
+                                <h2>Description</h2>
+
+                                <p>${description}</p>
+                            </div>
+                        </div>
+
+                        <div class="detailed-view-button">
+                            <button class="close-detailed-view">Close</button>
+                            <button class="view-property">Visit Property Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+
+            const detailedViewContainer = document.querySelector('.detailed-view-container');
+            detailedViewContainer.insertAdjacentHTML('afterbegin', detailedView)
+
+            dimBackground.classList.add('visible')
+
+            const closeWindowButton = document.querySelector('.close-detailed-view');
+            const detailedViewCard = document.querySelector('.detailed-view');
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key == 'Escape') {
+                    removeDetailedCard()
+                }
+            })
+
+            closeWindowButton.addEventListener('click', removeDetailedCard);
+
+            function removeDetailedCard() {
+                detailedViewCard.remove()
+                dimBackground.classList.remove('visible')
+            }
+
+            if (dimBackground.classList.contains('visible')) {
+                dimBackground.addEventListener('click', removeDetailedCard)
+            }
+        });
+    };
+}
+
+renderDetailedView()
+
+function renderDetailedViewFromBookmarks() {
+
+const bookmarkCards = savedPropertiesContainer.children;
+for (let i = 0; i < bookmarkCards.length; i++) {
+    const viewSavedPropertyButton = bookmarkCards[i].lastElementChild.lastElementChild.querySelector('.view-property');
+    viewSavedPropertyButton.addEventListener('click', ()=> {
+
+        const image = bookmarkCards[i].firstElementChild.querySelector('img').src;
+        const address = bookmarkCards[i].querySelector('h3').innerText;
+        const price = parseInt(bookmarkCards[i].querySelector('h2.price').innerText.replace(/£/g, ''));
+        const bedrooms = bookmarkCards[i].querySelector('p.bedrooms').innerText;
+        const bathrooms = bookmarkCards[i].querySelector('p.bathrooms').innerText;
+        const houseType = bookmarkCards[i].querySelector('p.type').innerText;
+        const description = bookmarkCards[i].querySelector('.description').innerText;
+        const newHome = houseCards[i].querySelector('.new-home').innerText;
+        const recentlyAdded = houseCards[i].querySelector('.recently-added').innerText;
+
+        let detailedView = ''
+        detailedView = detailedView + `
+
+            <div class="detailed-view">
+                <div class="first-content-wrapper">
+                    <div class="detailed-image-container">
+                        <img src="${image}" alt="">
+                    </div>
+
+                    <div class="text-content">
+                        <div>
+                        
+                            <h1 class="address">${address}</h1>
+
+                            <div class="house-details">
+                                <h1 class="price">£${price}</h1>
+                                <div class="new-home">${newHome}</div>
+                                <div class="recently-added">${recentlyAdded}</div>
+                            </div>
+
+                            <div class="icon-container">
+                                <p class="type"><i class="bi bi-house"></i>${houseType}</p>
+                                <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${bedrooms}</p>
+                                <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${bathrooms}</p>
+                            </div>
+
+                            <div class="description">
+                                <h2>Description</h2>
+
+                                <p>${description}</p>
+                            </div>
+                        </div>
+
+                        <div class="detailed-view-button">
+                            <button class="close-detailed-view">Close</button>
+                            <button class="view-property">Visit Property Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+
+            const detailedViewContainer = document.querySelector('.detailed-view-container');
+            detailedViewContainer.insertAdjacentHTML('afterbegin', detailedView)
+
+            const closeWindowButton = document.querySelector('.close-detailed-view');
+            const detailedViewCard = document.querySelector('.detailed-view');
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key == 'Escape') {
+                    removeDetailedCard()
+                }
+            })
+
+            closeWindowButton.addEventListener('click', removeDetailedCard);
+
+            function removeDetailedCard() {
+                detailedViewCard.remove()
+            }
+        })
+    }
+};
