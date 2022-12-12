@@ -257,7 +257,6 @@ i.bi.bi-door-open-fill {
 }
 
 ul.toggle-view {
-    display: flex;
     font-size: 0.8rem;
     flex-direction: row;
     height: fit-content;
@@ -964,19 +963,26 @@ h1.price {
 .home-status {
     display: flex;
     flex-direction: row;
+    margin: 0px 0px 10px;
 }
 
 .new-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: #84e8b1 solid 1px;
     color: #84e8b1;
     width: fit-content;
     font-size: 0.8rem;
-    padding: 5px 10px;
+    padding: 5px 12px;
     border-radius: 999px;
     margin: 0px 2px;
 }
 
 .recently-added {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: #d3d3d3 solid 1px;
     color: #d3d3d3;
     width: fit-content;
@@ -1112,6 +1118,7 @@ div:empty {
     }
 
     ul.toggle-view {
+        display: flex;
         justify-content: space-between;
     }
     
@@ -1120,6 +1127,13 @@ div:empty {
         color: #9b9b9b;
         background-color: transparent;
         border: none;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .toggle-menu {
@@ -1138,6 +1152,7 @@ div:empty {
         border-radius: 999px;
         background-color: transparent;
         transition: 0.15s;
+        margin: 10px;
     }
     
     .sorting-options-toggle i.active {

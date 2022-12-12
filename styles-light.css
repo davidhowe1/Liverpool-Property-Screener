@@ -509,7 +509,6 @@ button.view-property {
     display: flex;
     flex-direction: column;
     margin: 0px 40px;
-    height: 50%;
     max-width: 35em;
     overflow-y: hidden;
     background-color: #f1f1f1;
@@ -911,18 +910,25 @@ h1.price {
 .home-status {
     display: flex;
     flex-direction: row;
+    margin: 0px 0px 10px;
 }
 
 .new-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #84e8b1;
     width: fit-content;
     font-size: 0.8rem;
-    padding: 5px 10px;
+    padding: 5px 12px;
     border-radius: 999px;
     margin: 0px 2px;
 }
 
 .recently-added {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #d3d3d3;
     width: fit-content;
     font-size: 0.8rem;
@@ -1066,6 +1072,13 @@ div:empty {
         border: none;
     }
 
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     ul.li.toggle-menu {
         display: flex;
         background-color: transparent;
@@ -1087,6 +1100,7 @@ div:empty {
         border-radius: 999px;
         background-color: transparent;
         transition: 0.15s;
+        margin: 10px;
     }
     
     .sorting-options-toggle i.active {
