@@ -911,7 +911,6 @@ h1.price {
 .home-status {
     display: flex;
     flex-direction: row;
-    margin: 0px 15px;
 }
 
 .new-home {
@@ -1218,6 +1217,10 @@ div:empty {
         width: 250px;
     }
 
+    .home-status {
+        margin: 0px 0px 10px;
+    }
+
     .house-card.list .text-container p {
         font-size: 0.8rem;
         line-height: 1.2rem;
@@ -1345,6 +1348,10 @@ div:empty {
         font-size: 0.8rem;
     }
 
+    .home-status {
+        margin: 0px;
+    }
+
     .house-card .icon-container {
         margin: 10px 35% 10px 0px;
     }
@@ -1359,7 +1366,7 @@ div:empty {
     .house-card.list {
         width: 100%;
         margin: 5px 0px;
-        height: 125px;
+        height: 130px;
         border-radius: 5px;
         box-shadow: rgba(60, 64, 67, 0.1) 0px 1px 2px 0px, rgba(60, 64, 67, 0.1) 0px 2px 6px 2px;
     }
@@ -1391,6 +1398,10 @@ div:empty {
         margin: 10px 0px;
         width: 100%;
         flex-wrap: wrap;
+    }
+
+    .house-card.list .new-home, .house-card.list .recently-added {
+        padding: 0px 10px;
     }
 
     .house-card.list .text-container {
