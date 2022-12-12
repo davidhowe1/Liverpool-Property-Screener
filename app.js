@@ -185,11 +185,11 @@ function ready() {
                         <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${house.bedrooms}</p>
                         <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${house.bathrooms}</p>
                     </div>
-                </div>
 
-                <div class="home-status">
-                    <div class="new-home">${house.newHome}</div>
-                    <div class="recently-added">${house.recentlyAdded}</div>
+                    <div class="home-status">
+                        <div class="new-home">${house.newHome}</div>
+                        <div class="recently-added">${house.recentlyAdded}</div>
+                    </div>
                 </div>
 
                 <div class="description">
@@ -408,6 +408,8 @@ for (let i = 0; i < bookmark.length; i++ ) {
         const bathrooms = houseCards[i].querySelector('p.bathrooms').innerText;
         const houseType = houseCards[i].querySelector('p.type').innerText;
         const description = houseCards[i].querySelector('.description').querySelector('p').innerText;
+        const newHome = houseCards[i].querySelector('.new-home').innerText;
+        const recentlyAdded = houseCards[i].querySelector('.recently-added').innerText;
 
         savedPropertiesContainer.innerHTML += `
 
@@ -421,10 +423,16 @@ for (let i = 0; i < bookmark.length; i++ ) {
 
                 <div class="details">
                     <h3 class="address">${address}</h3>
+
                     <div class="icon-container">
                         <p class="type"><i class="bi bi-house"></i>${houseType}</p>
                         <p class="bedrooms"><img class="icon" src="icons/icons8-bedroom-96.png" alt="">${bedrooms}</p>
                         <p class="bathrooms"><img class="icon" src="icons/icons8-bath-100.png" alt="">${bathrooms}</p>
+                    </div>
+
+                    <div class="home-status">
+                        <div class="new-home">${newHome}</div>
+                        <div class="recently-added">${recentlyAdded}</div>
                     </div>
 
                     <div class="description">${description}</div>
