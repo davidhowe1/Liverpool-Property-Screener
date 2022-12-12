@@ -216,12 +216,12 @@ renderProperties(propertyListings)
 
 // Filter Lists for Quick Searches
 
-const newHomes = propertyListings.filter((item) => {
-    return item.newHome === 'New Home';
-})
-
 const recentlyAdded = propertyListings.filter((item) => {
     return item.recentlyAdded === 'Recently Added';
+})
+
+const newHomes = propertyListings.filter((item) => {
+    return item.newHome === 'New Home';
 })
 
 const twoBedHouses = propertyListings.filter((item) => {
@@ -241,7 +241,7 @@ function toggleOptions(list) {
     renderDetailedView()
 }
 
-const toggleLists = [propertyListings, newHomes, recentlyAdded, twoBedHouses, threeBedHouses]
+const toggleLists = [propertyListings, recentlyAdded, newHomes, twoBedHouses, threeBedHouses]
 const toggleMenuSearchButtons = document.querySelectorAll('ul.toggle-searches li')
 
 for (let i = 0; i < toggleMenuSearchButtons.length; i++) {
