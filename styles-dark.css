@@ -82,6 +82,7 @@ img.icon {
 }
 
 h2, p {
+    font-size: 0.9rem;
     margin: 0px 0px;
     color: #e8e8e8;
 }
@@ -370,7 +371,7 @@ ul li:hover {
     display: flex;
     flex-direction: column;
     width: min-content;
-    height: 400px;
+    height: 420px;
     margin: 20px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
     border-radius: 10px;
@@ -391,6 +392,7 @@ ul li:hover {
     width: 280px;
     overflow: hidden;
     border-radius: 10px 10px 0px 0px;
+    justify-content: center;
 }
 
 .house-card .image-container img {
@@ -477,12 +479,12 @@ h2.price {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-right: 15px;
 }
 
 .icon-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin: 20px 0px;
 }
 
@@ -530,6 +532,7 @@ button.view-property p {
     min-width: 450px;
     overflow: hidden;
     border-radius: 10px 0px 0px 10px;
+    justify-content: center;
 }
 
 .house-card.list .image-container img {
@@ -548,7 +551,7 @@ button.view-property p {
 }
 
 .house-card.list .house-details h3 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
 }
 
 .house-card.list .description {
@@ -559,17 +562,22 @@ button.view-property p {
     max-width: 35em;
     overflow-y: scroll;
     background-color: #323232;
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
 }
 
 .house-card.list .description h2 {
     font-weight: 300;
-    margin: 0px 0px 20px;
+    font-size: 1.1rem;
+    margin: 0px 0px 10px;
 }
 
 .house-card.list .house-details {
     margin: 40px 0px 20px 40px;
+}
+
+.house-card.list .home-status {
+    margin: 0px 0px 10px;
 }
 
 .house-card.list .icon-container {
@@ -614,6 +622,10 @@ input#slider {
     flex-direction: row;
     justify-content: flex-start;
     color: #e8e8e8;
+}
+
+.slider-value p {
+    font-size: 1rem;
 }
 
 #slider-value {
@@ -874,7 +886,6 @@ li.toggle-lighting-mode:hover {
     flex-direction: column;
     padding: 35px 35px 35px 35px;
     overflow: hidden;
-    height: 100%;
 }
 
 .detailed-image-container img {
@@ -963,7 +974,7 @@ h1.price {
 .home-status {
     display: flex;
     flex-direction: row;
-    margin: 0px 0px 10px;
+    margin: 0px;
 }
 
 .new-home {
@@ -1039,7 +1050,7 @@ div:empty {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding: 20px 0px;
+    padding: 20px 0px 0px;
 }
 
 .detailed-view-button button {
@@ -1195,7 +1206,6 @@ div:empty {
     }
 
     .detailed-image-container {
-        height: 400px;
         min-height: 300px;
         padding: 15px;
     }
@@ -1407,6 +1417,7 @@ div:empty {
     }
 
     .home-status {
+        flex-wrap: wrap;
         margin: 0px;
     }
 
@@ -1432,20 +1443,21 @@ div:empty {
     .house-card.list {
         width: 100%;
         margin: 8px 0px;
-        height: 130px;
+        height: 190px;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 2px 6px 2px;
     }
     
     .house-card.list .image-container {
-        min-width: 125px;
-        width: 60%;
+        min-width: 100px;
         border-radius: 5px 0px 0px 5px;
     }
 
     .house-card.list .image-container img {
         height: 100%;
         width: auto;
+        object-fit: cover;
+        object-position: center;
     }
     
     .house-card.list .house-details h3 {
@@ -1461,12 +1473,15 @@ div:empty {
     }
     
     .house-card.list .icon-container {
+        flex-wrap: wrap;
         margin: 10px 0px;
         width: 100%;
     }
 
     .house-card.list .new-home, .house-card.list .recently-added {
-        padding: 0px 10px;
+        font-size: 0.6rem;
+        padding: 0px 7px;
+        margin: 4px;
     }
 
     .house-card.list .text-container {
