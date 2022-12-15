@@ -309,7 +309,7 @@ li.sort-by-price :nth-child(2) {
 }
 
 .sort-by-price.ascending {
-    margin-right: 0px;
+    margin-right: -1px;
     border-radius: 4px 0px 0px 4px;
     border-right: 1px solid #323232;
 }
@@ -324,7 +324,7 @@ li.sort-by-price :nth-child(2) {
 }
 
 .sort-by-bedrooms.ascending {
-    margin-right: 0px;
+    margin-right: -1px;
     border-radius: 4px 0px 0px 4px;
     border-right: 1px solid #323232;
 }

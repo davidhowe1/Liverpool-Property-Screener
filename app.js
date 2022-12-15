@@ -1,8 +1,3 @@
-
-
-import { propertyListings } from "./property-listings.js";
-
-
 // Splash screen
 
 const splashScreen = document.getElementById('splash-screen');
@@ -19,8 +14,9 @@ window.onload = function() {
 
 // Render Property Listings
 
+import { propertyListings } from "./property-listings.js";
+
 const contentContainer = document.querySelector(".content-container");
-const contentLoader = document.getElementById('content-loader');
 
 function ready() {
     function renderProperties(property) {
