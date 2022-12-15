@@ -768,6 +768,7 @@ h3.address {
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    margin: 0px 5px;
 }
 
 .bookmark-card .description {
