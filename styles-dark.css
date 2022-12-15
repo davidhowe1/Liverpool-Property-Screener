@@ -34,7 +34,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: rgb(92,92,224);
+    background: #5c5ce0;
     background: linear-gradient(320deg, rgba(92,92,224,1) 0%, rgba(122,122,228,1) 100%);
     opacity: 100%;
     z-index: 100;
