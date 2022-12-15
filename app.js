@@ -110,7 +110,7 @@ for (let i = 0; i < toggleMenuSearchButtons.length; i++) {
 const belowMarketButton = document.querySelector('.below-market-value')
 
 belowMarketButton.addEventListener('click', function() {
-    total = 0;
+    let total = 0;
 
     for (let i = 0; i < houseCards.length; i++ ) {
         total += parseFloat(houseCards[i].lastElementChild.lastElementChild.
