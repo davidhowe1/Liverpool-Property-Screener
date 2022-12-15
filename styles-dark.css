@@ -602,8 +602,8 @@ input#slider {
     margin: 20px 0px 0px;
     outline: none;
     cursor: pointer;
-    filter: invert(85%);
-    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #c1c1c1 50%, #c1c1c1 100%);
+    filter: invert(100%);
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #9b9b9b 50%, #9b9b9b 100%);
 }
 
 #slider::-webkit-slider-thumb {
