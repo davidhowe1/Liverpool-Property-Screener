@@ -28,102 +28,6 @@ export const propertyListings = [
     image: 'https://media.rightmove.co.uk/204k/203528/127002389/203528_1433138-1_IMG_00_0000.jpeg',
     address: 'Carnarvon Road, Liverpool, L9',
     description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 89950,
-    bedrooms: 3,
-    bathrooms: 1,
-    type: 'Terraced',
-    newHome: '',
-    recentlyAdded: 'Recently Added',
-    },
-
-    {
-    image: 'https://media.rightmove.co.uk/73k/72919/129159044/72919_18276_IMG_00_0000.jpeg',
-    address: '41 Butterfield Street, Liverpool',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 60000,
-    bedrooms: 2,
-    bathrooms: 1,
-    type: 'Terraced',
-    newHome: '',
-    recentlyAdded: 'Recently Added',
-    },
-
-    {
-    image: 'https://media.rightmove.co.uk/75k/74061/127067960/74061_HSS248313_IMG_02_0000.jpeg',
-    address: 'Finch Lea Drive, Liverpool, L14',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 120000,
-    bedrooms: 3,
-    bathrooms: 1,
-    type: 'Semi-Detached',
-    newHome: 'New Home',
-    recentlyAdded: '',
-    },
-
-    {   
-    image: 'https://media.rightmove.co.uk/120k/119425/126063677/119425_SEF220610_IMG_00_0000.jpeg',
-    address: 'Harris Drive, Liverpool, L20',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 160000,
-    bedrooms: 3,
-    bathrooms: 1,
-    type: 'Semi-Detached',
-    newHome: 'New Home',
-    recentlyAdded: 'Recently Added',
-    },
-
-    {
-    image: 'https://media.rightmove.co.uk/204k/203528/127002389/203528_1433138-1_IMG_00_0000.jpeg',
-    address: 'Carnarvon Road, Liverpool, L9',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 89950,
-    bedrooms: 3,
-    bathrooms: 1,
-    type: 'Terraced',
-    newHome: '',
-    recentlyAdded: 'Recently Added',
-    },
-
-    {
-    image: 'https://media.rightmove.co.uk/73k/72919/129159044/72919_18276_IMG_00_0000.jpeg',
-    address: '41 Butterfield Street, Liverpool',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 60000,
-    bedrooms: 2,
-    bathrooms: 1,
-    type: 'Terraced',
-    newHome: '',
-    recentlyAdded: 'Recently Added',
-    },
-
-    {
-    image: 'https://media.rightmove.co.uk/75k/74061/127067960/74061_HSS248313_IMG_02_0000.jpeg',
-    address: 'Finch Lea Drive, Liverpool, L14',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 120000,
-    bedrooms: 3,
-    bathrooms: 1,
-    type: 'Semi-Detached',
-    newHome: 'New Home',
-    recentlyAdded: '',
-    },
-
-    {   
-    image: 'https://media.rightmove.co.uk/120k/119425/126063677/119425_SEF220610_IMG_00_0000.jpeg',
-    address: 'Harris Drive, Liverpool, L20',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
-    price: 160000,
-    bedrooms: 3,
-    bathrooms: 1,
-    type: 'Semi-Detached',
-    newHome: '',
-    recentlyAdded: 'Recently Added',
-    },
-
-    {
-    image: 'https://media.rightmove.co.uk/204k/203528/127002389/203528_1433138-1_IMG_00_0000.jpeg',
-    address: 'Carnarvon Road, Liverpool, L9',
-    description: 'A bright modern two bedroom apartment situated on the first floor of this popular development on Highfield Street which runs parallel with Pall Mall close to its junction with Leeds Street. The property is close to Liverpool John Moores University and immediate vacant possession is available upon completion.',
     price: 89_950,
     bedrooms: 3,
     bathrooms: 1,
@@ -213,7 +117,7 @@ export const propertyListings = [
     bedrooms: 4,
     bathrooms: 1,
     newHome: '',
-    recentlyAdded: ''
+    recentlyAdded: 'Recently Added',
     },
 
     {
@@ -429,7 +333,7 @@ export const propertyListings = [
     bedrooms: 2,
     bathrooms: 2,
     newHome: 'New Home',
-    recentlyAdded: ''
+    recentlyAdded: 'Recently Added',
     },
 
     {
@@ -782,8 +686,8 @@ export const propertyListings = [
     type: 'Semi-Detached',
     bedrooms: 3,
     bathrooms: 2,
-    newHome: '',
-    recentlyAdded: ''
+    newHome: 'New Home',
+    recentlyAdded: 'Recently Added',
     },
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/204k/203528/128660711/203528_1450611-1_IMG_21_0000_max_476x317.jpeg',
@@ -1322,7 +1226,7 @@ export const propertyListings = [
     bedrooms: 3,
     bathrooms: 1,
     newHome: '',
-    recentlyAdded: ''
+    recentlyAdded: 'Recently Added',
     },
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/13k/12162/127956149/12162_S141268_IMG_00_0000_max_476x317.jpeg',
@@ -1333,7 +1237,7 @@ export const propertyListings = [
     bedrooms: 3,
     bathrooms: 2,
     newHome: '',
-    recentlyAdded: ''
+    recentlyAdded: 'Recently Added',
     },
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/2k/1741/126521321/1741_LSU107465_IMG_05_0000_max_476x317.jpeg',
@@ -1377,7 +1281,7 @@ export const propertyListings = [
     bedrooms: 3,
     bathrooms: 1,
     newHome: '',
-    recentlyAdded: ''
+    recentlyAdded: 'Recently Added',
     },
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/32k/31079/129968702/31079_PRE220712_IMG_00_0000_max_476x317.jpeg',
@@ -1498,7 +1402,7 @@ export const propertyListings = [
     bedrooms: 2,
     bathrooms: 1,
     newHome: '',
-    recentlyAdded: ''
+    recentlyAdded: 'Recently Added',
     },
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/122k/121735/129965513/121735_HUB721197_IMG_00_0000_max_476x317.jpeg',
@@ -1542,6 +1446,6 @@ export const propertyListings = [
     bedrooms: 2,
     bathrooms: 1,
     newHome: '',
-    recentlyAdded: ''
+    recentlyAdded: 'Recently Added',
     }
 ];

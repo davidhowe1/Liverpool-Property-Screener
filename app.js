@@ -1,5 +1,3 @@
-// Splash screen
-
 const splashScreen = document.getElementById('splash-screen');
 
 window.onload = function() {
@@ -11,8 +9,6 @@ window.onload = function() {
 
     setTimeout(removeLoadingScreen, 1500)
 }
-
-// Render Property Listings
 
 import { propertyListings } from "./property-listings.js";
 
@@ -81,12 +77,20 @@ const newHomes = propertyListings.filter((item) => {
     return item.newHome === 'New Home';
 })
 
+const apartments = propertyListings.filter((item) => {
+    return item.type === 'Apartment'
+})
+
 const twoBedHouses = propertyListings.filter((item) => {
     return item.bedrooms === 2;
 })
 
 const threeBedHouses = propertyListings.filter((item) => {
     return item.bedrooms === 3;
+})
+
+const fourBedroomsPlus = propertyListings.filter((item) => {
+    return item.bedrooms > 3;
 })
 
 function toggleOptions(list) {
@@ -98,7 +102,7 @@ function toggleOptions(list) {
     renderDetailedView()
 }
 
-const toggleLists = [propertyListings, recentlyAdded, newHomes, twoBedHouses, threeBedHouses]
+const toggleLists = [propertyListings, recentlyAdded, newHomes, apartments, twoBedHouses, threeBedHouses, fourBedroomsPlus]
 const toggleMenuSearchButtons = document.querySelectorAll('ul.toggle-searches li')
 
 for (let i = 0; i < toggleMenuSearchButtons.length; i++) {
@@ -235,7 +239,7 @@ priceSlider.oninput = function() {
     }
 }
 
-// Bookmarking
+// Bookmark Code
 
 const bookmark = document.getElementsByClassName('bookmark-icon');
 const savedPropertiesContainer = document.querySelector('.saved-property-list');
@@ -353,7 +357,7 @@ renderSavedProperties()
 addBookMark()
 renderDetailedViewFromBookmarks()
 
-// Toggle Bookmarks Panel
+// Bookmarks Panel Code
 
 const dimBackground = document.querySelector('.dim-background')
 const bookmarksPanel = document.querySelector('.bookmarks-panel');
@@ -382,7 +386,7 @@ dimBackground.addEventListener('click', () => {
 
 hideBookmarksPanelButton.addEventListener('click', hideBookmarksPanel);
 
-// Toggle Card/List View Code
+// Toggle Card View Code
 
 const toggleView = document.querySelector('.grid-view')
 const text = toggleView.querySelector('span')
@@ -410,7 +414,7 @@ function toggleCardView() {
 
 toggleView.addEventListener('click', toggleCardView);
 
-// Dark/Light Theme
+// Dark Mode Code
 
 const darkModeToggle = document.querySelector('li.toggle-lighting-mode');
 const toggleThemeButtonIcon = darkModeToggle.firstElementChild;
@@ -491,7 +495,7 @@ searchBar.oninput = function() {
     }
 }
 
-// Detailed View of Cards
+// Open more detailed view of cards
 
 function renderDetailedView() {
 

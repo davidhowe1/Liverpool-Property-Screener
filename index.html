@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Screener</title>
-    <link rel="preload" href="styles-light.css" as="style">
-    <link rel="stylesheet" href="styles-dark.css" id="theme-link">
+    <link rel="preload" href="styles-dark.css" as="style">
+    <link rel="stylesheet" href="styles-light.css" id="theme-link">
     <script src="https://unpkg.com/feather-icons"></script>
     <script type="module" src="property-listings.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -16,7 +16,7 @@
 
     <div id="splash-screen">
         <div class="loader">
-            <img class="icon-splash-screen" src="icons/door-open-fill.svg" alt="">
+            <img class="icon-splash-screen" src="icons/house-1160881.png" alt="">
         </div>
         <p></p>
     </div>
@@ -38,7 +38,9 @@
         </div>
 
         <header>
-            <div class="logo"><i class="bi bi-door-open-fill"></i></div>
+            <div class="logo">
+                <img class="icon-splash-screen" src="icons/house-1160881.png" alt="">
+            </i></div>
 
             <div class="search-bar">
                 <div class="search-icon">
@@ -61,9 +63,13 @@
                 <li class="toggle-search"><i class="bi bi-houses"></i>All Properties</li>
                 <li class="toggle-search"><i class="bi bi-clock"></i>Recently Added</li>
                 <li class="toggle-search"><i class="bi bi-stars"></i>New Homes</li>
+                <li class="toggle-search"><i class="bi bi-buildings"></i>Apartments</li>
                 <li class="toggle-search"><i class="bi bi-2-square"></i>2 Bed</li>
                 <li class="toggle-search"><i class="bi bi-3-square"></i>3 Bed</li>
+                <li class="toggle-search"><i class="bi bi-4-square"><i class="bi bi-plus"></i></i>4 Bed and Over</li>
             </ul>
+
+            
 
             <h3 class="title">Price Range</h3>
 
@@ -90,10 +96,6 @@
         </div>
 
         <div class="toggle-view-items">
-
-            <div id="content-loader inactive">
-                <P></P>
-            </div>
             
             <ul class="toggle-view">
                 <div class="burger">
@@ -140,8 +142,7 @@
     </div>
 
     <script>feather.replace()</script>
-    <script type="module" src="app.js"></script>
-    
+    <script type="module" src="app.js"></script>    
 </body>
 
 </html>
