@@ -179,7 +179,7 @@ i.bi.bi-door-open-fill {
 .app-container {
     display: flex;
     flex-direction: row;
-    height: 93vh;
+    height: 95vh;
     width: 100vw;
     background-color: #f9f9f9;
 }
@@ -531,6 +531,7 @@ button.view-property {
     background-color: #f1f1f1;
     padding: 15px;
     border-radius: 15px;
+    line-height: 1.3rem;
 }
 
 .house-card.list .home-status {
@@ -572,6 +573,18 @@ input#slider {
     background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #9b9b9b 50%, #9b9b9b 100%);
 }
 
+.price-markers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.price-markers p {
+    margin: 3px 0px 0px;
+    font-size: 0.85rem;
+    padding: 5px;
+}
+
 #slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -583,7 +596,7 @@ input#slider {
   }
 
 .slider-value {
-    margin: 10px 0px;
+    margin: 20px 0px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -974,6 +987,8 @@ div:empty {
 }
 
 .text-content .description h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
     margin: 0px 0px 10px;
 }
 

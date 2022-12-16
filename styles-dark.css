@@ -34,7 +34,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: #5c5ce0;
+    background: rgb(92,92,224);
     background: linear-gradient(320deg, rgba(92,92,224,1) 0%, rgba(122,122,228,1) 100%);
     opacity: 100%;
     z-index: 100;
@@ -186,7 +186,7 @@ i.bi.bi-door-open-fill {
 .app-container {
     display: flex;
     flex-direction: row;
-    height: 93vh;
+    height: 95vh;
     width: 100%;
 }
 
@@ -576,6 +576,7 @@ button.view-property p {
     background-color: #323232;
     padding: 15px;
     border-radius: 15px;
+    line-height: 1.3rem;
 }
 
 .house-card.list .description h2 {
@@ -618,6 +619,18 @@ input#slider {
     background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 50%, #9b9b9b 50%, #9b9b9b 100%);
 }
 
+.price-markers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.price-markers p {
+    margin: 3px 0px 0px;
+    font-size: 0.85rem;
+    padding: 5px;
+}
+
 #slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -629,7 +642,7 @@ input#slider {
   }
 
 .slider-value {
-    margin: 10px 0px;
+    margin: 20px 0px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -1024,9 +1037,12 @@ div:empty {
     border-radius: 10px;
     background-color: #323232;
     padding: 20px;
+    line-height: 1.3rem;
 }
 
 .text-content .description h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
     margin: 0px 0px 10px;
 }
 

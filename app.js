@@ -31,7 +31,7 @@ function ready() {
 
             <div class='text-container'>
                 <div class='house-details'>
-                    <h3 class="address">${house.address}</h3>
+                    <h3 title="${house.address}" class="address">${house.address}</h3>
     
                     <div class="icon-container">
                         <p class="type"><i class="bi bi-house"></i>${house.type}</p>
@@ -153,63 +153,44 @@ sortingOptionsToggleDisplay.addEventListener('click', ()=> {
     sortingOptionsToggleIcon.classList.toggle('active')
 })
 
-function sortByPrice() {
+function sortByAscending(element) {
+    Array.from(houseCards).sort(function(a, b) {
+        a = parseInt(a.querySelector(element).innerText.replace(/£/g, ''));
+        b = parseInt(b.querySelector(element).innerText.replace(/£/g, ''));
+        return (a > b) - (a < b)
+    }).forEach(function(n, i) {
+        n.style.order = i;
+    });
+}
 
-    let cards = document.querySelectorAll('.house-card');
+function sortByDescending(element) {
+    Array.from(houseCards).sort(function(a, b) {
+        a = parseInt(a.querySelector(element).innerText.replace(/£/g, ''));
+        b = parseInt(b.querySelector(element).innerText.replace(/£/g, ''));
+        return (a < b) - (a > b)
+    }).forEach(function(n, i) {
+        n.style.order = i;
+    });
+}
+
+function sortByPrice() {
     const sortPriceAscending = document.querySelector('.sort-by-price.ascending');
     const sortPriceDescending = document.querySelector('.sort-by-price.descending');
 
-    sortPriceAscending.addEventListener('click', sortByAscending)
-    sortPriceDescending.addEventListener('click', sortByDescending)
-
-    function sortByAscending() {
-        Array.from(cards).sort(function(a, b) {
-            a = parseInt(a.querySelector('.price').innerText.replace(/£/g, ''));
-            b = parseInt(b.querySelector('.price').innerText.replace(/£/g, ''));
-            return (a > b) - (a < b)
-        }).forEach(function(n, i) {
-            n.style.order = i;
-        });
-    }
-
-    function sortByDescending() {
-        Array.from(cards).sort(function(a, b) {
-            a = parseInt(a.querySelector('.price').innerText.replace(/£/g, ''));
-            b = parseInt(b.querySelector('.price').innerText.replace(/£/g, ''));
-            return (a < b) - (a > b)
-        }).forEach(function(n, i) {
-            n.style.order = i;
-        });
-    }
+    sortPriceAscending.addEventListener('click', ()=> {
+        sortByAscending('.price')})
+    sortPriceDescending.addEventListener('click', ()=> {
+        sortByDescending('.price')})
 }
 
 function sortByBedrooms() {
-    let cards = document.querySelectorAll('.house-card');
     const sortBedroomsAscending = document.querySelector('.sort-by-bedrooms.ascending');
     const sortBedroomsDescending = document.querySelector('.sort-by-bedrooms.descending');
 
-    sortBedroomsAscending.addEventListener('click', sortByAscending)
-    sortBedroomsDescending.addEventListener('click', sortByDescending)
-
-    function sortByAscending() {
-        Array.from(cards).sort(function(a, b) {
-            a = parseInt(a.querySelector('.bedrooms').innerText.replace(/£/g, ''));
-            b = parseInt(b.querySelector('.bedrooms').innerText.replace(/£/g, ''));
-            return (a > b) - (a < b)
-        }).forEach(function(n, i) {
-            n.style.order = i;
-        });
-    }
-
-    function sortByDescending() {
-        Array.from(cards).sort(function(a, b) {
-            a = parseInt(a.querySelector('.bedrooms').innerText.replace(/£/g, ''));
-            b = parseInt(b.querySelector('.bedrooms').innerText.replace(/£/g, ''));
-            return (a < b) - (a > b)
-        }).forEach(function(n, i) {
-            n.style.order = i;
-        });
-    }
+    sortBedroomsAscending.addEventListener('click', ()=> {
+        sortByAscending('.bedrooms')})
+    sortBedroomsDescending.addEventListener('click', ()=> {
+        sortByDescending('.bedrooms')})
 }
 
 // Price slider code
