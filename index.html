@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-icons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-icons/favicon-32x32.png">
-    <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#ffffff">
     <script src="https://unpkg.com/feather-icons"></script>
     <script type="module" src="property-listings.js"></script>
@@ -78,7 +77,13 @@
             <h3 class="title">Price Range</h3>
 
             <div class="price-slider-container">
-                <input id="slider" type="range" name="price-slider" value="250000" min="0" max="500000">
+                <input id="slider" type="range" name="price-slider" value="250000" min="10000" max="500000">
+                
+                <div class="price-markers">
+                    <p>£10K</p>
+                    <p>£250k</p>
+                    <p>£500k</p>
+                </div>
 
                 <div class="slider-value">
                     <p>Up to: £<div id="slider-value">£0</div></p>
@@ -108,27 +113,48 @@
 
                 <div class="sorting-options-container">
                     <div class="sorting-options hidden">
-                        <li title="Toggle View" class="grid-view"><i class="bi bi-list-ul"></i><span>List</span></li>
 
-                        <li title="Sort by price ascending" class="sort-by-price ascending">
-                            <span><i class="bi bi-currency-pound"></i></span>
-                            <i class="bi bi-arrow-up"></i>
-                        </li>
+                        <p>Sorting Options</p>
 
-                        <li title="Sort by price descending" class="sort-by-price descending">
-                            <span></span>
-                            <i class="bi bi-arrow-down"></i>
-                        </li>
+                        <div class="sorting-option-button-group">
+                            <li title="Toggle View" class="grid-view"><i class="bi bi-list-ul"></i><span>List</span></li>
+                        </div>
 
-                        <li title="Sort by bedrooms ascending" class="sort-by-bedrooms ascending">
-                            <span><img class="icon" src="icons/icons8-bedroom-96.png" alt=""></span>
-                            <i class="bi bi-arrow-up"></i>
-                        </li>
+                        <div class="sorting-option-button-group">
+                            <li title="Sort by price ascending" class="sort-by-price ascending">
+                                <span><i class="bi bi-currency-pound"></i></span>
+                                <i class="bi bi-arrow-up"></i>
+                            </li>
 
-                        <li title="Sort by bedrooms descending" class="sort-by-bedrooms descending">
-                            <span></span>
-                            <i class="bi bi-arrow-down"></i>
-                        </li>
+                            <li title="Sort by price descending" class="sort-by-price descending">
+                                <span></span>
+                                <i class="bi bi-arrow-down"></i>
+                            </li>
+                        </div>
+
+                        <div class="sorting-option-button-group">
+                            <li title="Sort by bedrooms ascending" class="sort-by-bedrooms ascending">
+                                <span><img class="icon" src="icons/icons8-bedroom-96.png" alt=""></span>
+                                <i class="bi bi-arrow-up"></i>
+                            </li>
+
+                            <li title="Sort by bedrooms descending" class="sort-by-bedrooms descending">
+                                <span></span>
+                                <i class="bi bi-arrow-down"></i>
+                            </li>
+                        </div>
+
+                        <div class="sorting-option-button-group">
+                            <li title="Sort by bathrooms ascending" class="sort-by-bathrooms ascending">
+                                <span><img class="icon" src="icons/icons8-bath-100.png" alt=""></span>
+                                <i class="bi bi-arrow-up"></i>
+                            </li>
+
+                            <li title="Sort by bathrooms descending" class="sort-by-bathrooms descending">
+                                <span></span>
+                                <i class="bi bi-arrow-down"></i>
+                            </li>
+                        </div>
                     </div>
 
                     <div class="sorting-options-toggle">

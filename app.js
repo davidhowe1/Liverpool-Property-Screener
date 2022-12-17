@@ -99,6 +99,7 @@ function toggleOptions(list) {
     addBookMark()
     sortByPrice()
     sortByBedrooms()
+    sortByBathrooms()
     renderDetailedView()
 }
 
@@ -138,6 +139,7 @@ belowMarketButton.addEventListener('click', function() {
 
 sortByBedrooms()
 sortByPrice()
+sortByBathrooms()
 }
 
 ready()
@@ -150,7 +152,7 @@ const sortingOptionsToggleIcon = document.querySelector('.sorting-options-toggle
 
 sortingOptionsToggleDisplay.addEventListener('click', ()=> {
     sortingOpttionsContainer.classList.toggle('hidden');
-    sortingOptionsToggleIcon.classList.toggle('active')
+    sortingOptionsToggleIcon.classList.toggle('active');
 })
 
 function sortByAscending(element) {
@@ -192,6 +194,16 @@ function sortByBedrooms() {
     sortBedroomsDescending.addEventListener('click', ()=> {
         sortByDescending('.bedrooms')})
 }
+
+function sortByBathrooms() {
+    const sortBathroomsAscending = document.querySelector('.sort-by-bathrooms.ascending');
+    const sortBathroomsDescending = document.querySelector('.sort-by-bathrooms.descending');
+
+    sortBathroomsAscending.addEventListener('click', ()=> {
+        sortByAscending('.bathrooms')})
+    sortBathroomsDescending.addEventListener('click', ()=> {
+        sortByDescending('.bathrooms')})
+    }
 
 // Price slider code
 
@@ -442,6 +454,10 @@ const sidePanelCloseMobile = document.querySelector('.side-panel-top i');
 
 toggleSidePanelMobile.addEventListener('click', () => {
     sidePanel.classList.toggle('active')
+    if (!sortingOpttionsContainer.classList.contains('hidden')) {
+        sortingOpttionsContainer.classList.add('hidden')
+        sortingOptionsToggleIcon.classList.remove('active')
+    }
 })
 
 sidePanelCloseMobile.addEventListener('click', () => {

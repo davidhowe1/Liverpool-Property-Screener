@@ -283,6 +283,16 @@ li.sort-by-price :nth-child(2) {
     transition: 0.4s all ease-in-out;
 }
 
+.sorting-options p {
+    padding: 10px 10px;
+    align-self: center;
+}
+
+.sorting-option-button-group {
+    display: flex;
+    flex-direction: row;
+}
+
 .sort-by-price.ascending {
     margin-right: -1px;
     border-radius: 4px 0px 0px 4px;
@@ -309,8 +319,19 @@ li.sort-by-price :nth-child(2) {
     border-radius: 0px 4px 4px 0px;
 }
 
-.sort-by-bedrooms.descending i {
+.sort-by-bedrooms.descending i, .sort-by-bathrooms.descending i {
     padding: 0px 5px;
+}
+
+.sort-by-bathrooms.ascending {
+    margin-right: -1px;
+    border-radius: 4px 0px 0px 4px;
+    border-right: 1px solid #323232;
+}
+
+.sort-by-bathrooms.descending {
+    margin-left: 0px;
+    border-radius: 0px 4px 4px 0px;
 }
 
 ul {
@@ -487,7 +508,7 @@ button.view-property {
     display: flex;
     flex-direction: row;
     width: fit-content;
-    height: 450px;
+    height: 350px;
 }
 
 .house-card.list.hidden {
@@ -524,7 +545,7 @@ button.view-property {
 .house-card.list .description {
     display: flex;
     flex-direction: column;
-    margin: 0px 40px;
+    margin: 0px 30px 0px 30px;
     height: 50%;
     max-width: 35em;
     overflow-y: hidden;
@@ -535,25 +556,25 @@ button.view-property {
 }
 
 .house-card.list .home-status {
-    margin: 0px 0px 10px;
+    margin: 10px 0px;
 }
 
 .house-card.list .description h2 {
     font-weight: 300;
     font-size: 1.1rem;
-    margin: 0px 0px 10px; 
+    margin: 0px 0px 10px;
 }
 
 .house-card.list .house-details {
-    margin: 40px 0px 20px 40px;
+    margin: 30px 30px 0px 30px;
 }
 
 .house-card.list .icon-container {
-    width: 250px;
+    margin: 10px 0px;
 }
 
 .house-card.list .button-container {
-    margin: 10px 20px 10px 40px;
+    margin: 10px 30px 10px 30px;
 }
 
 /* Slider Styles */
@@ -613,7 +634,7 @@ input#slider {
 }
 
 .complex-search-criteria {
-    margin: 10px 0px;
+    margin: 0px;
 }
 
 .show-bookmarks {
@@ -982,7 +1003,7 @@ div:empty {
 
 .text-content .description {
     border-radius: 10px;
-    background-color: #ebebf1;
+    background-color: #f1f1f1;
     padding: 20px;
 }
 
@@ -1043,12 +1064,12 @@ div:empty {
         display: flex;
         flex-direction: row;
         width: fit-content;
-        height: 375px;
+        height: 350px;
     }
 
     .house-card.list .image-container {
         display: flex;
-        min-width: 375px;
+        min-width: 350px;
         overflow: hidden;
         border-radius: 10px 0px 0px 10px;
     }
@@ -1141,7 +1162,7 @@ div:empty {
 
     .sorting-options-toggle i {
         display: flex;
-        color: #222222;
+        color: black;
         padding: 8px;
         font-size: 1rem;
         border-radius: 999px;
@@ -1156,25 +1177,58 @@ div:empty {
         font-size: 1rem;
         color: #222222;
         border-radius: 999px;
-        background-color: #c1c1c1;
+        background-color: #dddddd;
         transition: 0.15s;
     }
     
     .sorting-options {
         display: flex;
-        position: relative;
-        flex-direction: row;
+        position: absolute;
+        flex-direction: column;
+        right: 8vw;
+        padding: 10px;
+        border-radius: 10px;
+        top: 7vh;
         transition: 0.3s all ease-in-out;
         overflow: scroll;
+        z-index: 1;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 2px 6px 2px;
+    }
+
+    .sorting-options p {
+        padding: 10px 0px;
+        align-self: center;
     }
 
     .sorting-options.hidden {
-        display: flex;
-        position: relative;
-        flex-direction: row;
-        transform: translateX(100vw);
+        display: none;
         transition: 0.3s all ease-in-out;
         overflow: scroll;
+        border-radius: 10px;
+    }
+
+    .sorting-option-button-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sorting-option-button-group li span img {
+        height: 11px;
+        width: auto;
+        padding: 0px 5px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    li.grid-view {
+        width: 100%;
+    }
+
+    ul.toggle-view li {
+        padding: 8px;
     }
 
     /* Detailed Card styles */
@@ -1242,7 +1296,7 @@ div:empty {
 
     .house-card.list {
         width: 100%;
-        height: 250px;
+        height: 275px;
     }
     
     .house-card.list .image-container {
@@ -1365,8 +1419,17 @@ div:empty {
         align-self: center;
     }
 
+    li.grid-view {
+        width: 100%;
+    }
+
     ul.toggle-view li {
-        padding: 5px;
+        padding: 8px;
+    }
+
+    .sorting-options {
+        right: 15vw;
+        top: 9vh;
     }
 
     /* Detailed Card styles */
@@ -1424,7 +1487,7 @@ div:empty {
     }
 
     .house-card .icon-container {
-        margin: 10px 35% 10px 0px;
+        margin: 15px 0px;
     }
 
     /* House Card List Mobile */
@@ -1450,6 +1513,8 @@ div:empty {
     .house-card.list .image-container img {
         height: 100%;
         width: auto;
+        object-fit: cover;
+        object-position: center;
     }
     
     .house-card.list .house-details h3 {
@@ -1462,6 +1527,10 @@ div:empty {
     
     .house-card.list .house-details {
         margin: 8px 12px 0px;
+    }
+
+    .house-card.list .home-status {
+        margin: 0px;
     }
     
     .house-card.list .icon-container {

@@ -50,7 +50,7 @@ export const propertyListings = [
 
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/235k/234635/130007372/234635_ElementTheQuarter-208950-Liverpool-EQU655_IMG_00_0000_max_476x317.jpeg',
-    address: 'Low Hill, Liverpool,L6 1AE',
+    address: 'Low Hill, Liverpool, L6 1AE',
     description: 'Luxury eco apartments available below market value in Liverpool city centre.EQU655',
     price: 208950,
     type: 'Flat',
@@ -182,7 +182,7 @@ export const propertyListings = [
 
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/235k/234635/130007378/234635_ElementTheQuarter-107950-Liverpool-EQU663_IMG_01_0000_max_476x317.jpeg',
-    address: 'Fully Managed Liverpool Investment , Low Hill, Liverpool,L6 1AE',
+    address: 'Fully Managed Liverpool Investment , Low Hill, Liverpool, L6 1AE',
     description: 'Incredible prices on luxury Liverpoolapartments located in the heart of the Knowledge Quarter. Buy to let investment only with 8% NETrental returns.EQU663',
     price: 107950,
     type: 'Flat',
@@ -326,7 +326,7 @@ export const propertyListings = [
 
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/69k/68046/113143172/68046_KingsDockMill-250000-Liverpool-KDM8850_IMG_01_0000_max_476x317.jpeg',
-    address: 'L1 Investment Apartments, Hurst Street, Liverpool,L1 8DN',
+    address: 'Hurst Street, Liverpool, L1 8DN',
     description: '7% NET rental return on 2-bedroom apartments in Liverpool city centre. The expert management company ensures your investment is hassle-free, with apartment prices startingfrom £169,995. KDM8850',
     price: 250000,
     type: 'Apartment',
@@ -757,7 +757,7 @@ export const propertyListings = [
     },
     {
     image: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/69k/68046/129991457/68046_KingsDockMill-224995-Liverpool-KDM3525_IMG_01_0000_max_476x317.jpeg',
-    address: 'L1 Investment Apartments, Hurst Street, Liverpool,L1 8DN',
+    address: 'Hurst Street, Liverpool, L1 8DN',
     description: "Receive 7% rental return in this new development in collaboration with one of Liverpool's most innovative and experienced developers. KDM3525",
     price: 224995,
     type: 'Apartment',
